@@ -26,5 +26,6 @@ yarn-error.log*
 *.fig
 *.xd
 .prettierignore
+.vscode/
 
 notes.md

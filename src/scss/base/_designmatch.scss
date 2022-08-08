@@ -1,0 +1,28 @@
+@use "../abstracts/mixins" as *;
+
+body {
+
+  &::before {
+    position: absolute;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    content: "";
+    background-image: url('/bgmatch/Mobile.jpg');
+    background-size: 375px auto;
+    opacity: 0;
+    pointer-events: none;
+
+    @include breakpoint-up(medium) {
+        background-image: url('/bgmatch/Desktop.jpg');
+        background-size: 768px auto;
+    }
+
+    @include breakpoint-up(large) {
+        background-image: url('/bgmatch/Desktop.jpg');
+        background-size: 1440px auto;
+    }
+  }
+}
