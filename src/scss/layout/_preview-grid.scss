@@ -1,20 +1,26 @@
 // _preview-grid.scss
 
 @use "../abstracts/mixins" as *;
+@use "../abstracts/colors" as *;
 
 .preview-grid {
   display: flex;
   flex-direction: column;
+  padding: 0 calc((100vw - 327px) / 2) 0;
 
   @include breakpoint-up(medium) {
     display: grid;
     grid-auto-flow: column;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(286, 10px);
+    grid-template-rows: repeat(572, 5px);
+    column-gap: 40px;
+    padding: 40px calc((100vw - 688px) / 2) 0;
   }
 
   @include breakpoint-up(large) {
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(143, 10px);
+    grid-template-rows: repeat(286, 5px);
+
+    padding: 40px calc(4000% / 1440) 0;
   }
 }

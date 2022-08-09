@@ -4,7 +4,9 @@ html {
           box-sizing: border-box;
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   -webkit-box-sizing: inherit;
           box-sizing: inherit;
   margin: 0;
@@ -12,7 +14,7 @@ html {
 }
 
 body {
-  background-color: white;
+  background-color: #f3f3f3;
 }
 
 * {
@@ -51,28 +53,28 @@ p {
   font-weight: 700;
 }
 
-a {
+button {
   font-size: 0.5625rem;
   line-height: 0.6875;
   letter-spacing: 2px;
   font-weight: 700;
   text-transform: uppercase;
 }
-a.header-link {
-  text-decoration: none;
+button.header-link {
+  letter-spacing: 1.93px;
 }
 @media (min-width: 641px) {
-  a.header-link {
+  button.header-link {
     font-size: 0.75rem;
     line-height: 0.9375rem;
     letter-spacing: 2.5px;
   }
 }
-a.view-image-link {
+button.view-image-link {
   font-size: 0.625rem;
   letter-spacing: 2.14px;
 }
-a.close-image-link {
+button.close-image-link {
   font-size: 0.875rem;
   letter-spacing: 3px;
 }

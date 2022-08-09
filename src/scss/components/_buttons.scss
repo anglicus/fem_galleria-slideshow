@@ -1,0 +1,15 @@
+// _buttons.scss
+
+@use "../abstracts/colors" as *;
+
+.button {
+  &--linkstyle {
+    border: none;
+    background: none;
+    color: $medGray;
+
+    &:hover {
+      color: $black;
+    }
+  }
+}

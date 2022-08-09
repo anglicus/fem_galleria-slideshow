@@ -1,20 +1,43 @@
 // _preview-cell.scss
 
 @use "../abstracts/mixins" as *;
+@use "../abstracts/colors" as *;
 
 .preview-cell {
   position: relative;
+  margin-top: 24px;
+
+  &__thumbnail {
+    position: absolute;
+    display: block;
+    right: 0;
+  }
 
   &__text-div {
     position: absolute;
-    bottom: 52px;
+    bottom: 32px;
+    padding: 0 48px 0 32px;
+    color: $white;
+
+    @include breakpoint-up(medium) {
+      bottom: 72px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 8px;
   }
 
   @include breakpoint-up(medium) {
+    margin-top: 0;
     grid-column: var(--tablet-col);
+
+    width: 324px;
+    overflow: hidden;
   }
 
   @include breakpoint-up(large) {
     grid-column: var(--desktop-col);
+    width: 310px;
   }
 }

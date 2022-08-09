@@ -1,10 +1,14 @@
 // Header.jsx
 
+import logo from "../assets/galleria.png";
+
 const Header = (props) => {
   return (
     <header className="header">
-      <p>galleria.</p>
-      <button>start slideshow</button>
+      <img className="header__logo" src={logo} alt="galleria logo" />
+      <button className="header__button header-link button--linkstyle">
+        start slideshow
+      </button>
     </header>
   );
 };
