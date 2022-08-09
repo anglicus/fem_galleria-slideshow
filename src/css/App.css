@@ -23,6 +23,60 @@ html {
   font-size: 100%;
 }
 
+h2 {
+  font-size: 1.5rem;
+  line-height: 1.8125rem;
+  font-weight: 700;
+}
+@media (min-width: 641px) {
+  h2.slideshow-page {
+    font-size: 3.5rem;
+    line-height: 4rem;
+  }
+}
+
+h3 {
+  font-size: 0.8125rem;
+  line-height: 1.0625rem;
+  font-weight: 400;
+}
+h3.slideshow-page {
+  font-size: 0.9375rem;
+  line-height: 1.1875rem;
+}
+
+p {
+  font-size: 0.875rem;
+  line-height: 1.75rem;
+  font-weight: 700;
+}
+
+a {
+  font-size: 0.5625rem;
+  line-height: 0.6875;
+  letter-spacing: 2px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+a.header-link {
+  text-decoration: none;
+}
+@media (min-width: 641px) {
+  a.header-link {
+    font-size: 0.75rem;
+    line-height: 0.9375rem;
+    letter-spacing: 2.5px;
+  }
+}
+a.view-image-link {
+  font-size: 0.625rem;
+  letter-spacing: 2.14px;
+}
+a.close-image-link {
+  font-size: 0.875rem;
+  letter-spacing: 3px;
+}
+
 .preview-cell {
   position: relative;
 }

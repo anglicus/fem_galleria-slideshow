@@ -5,3 +5,86 @@
 html {
   font-size: 100%;
 }
+
+//// *** header start/stop slideshow - M: 9/auto/1.93, T,D: 12/auto/2.57 BOLD
+//// preview
+///  painting title - M,T,D: 24/auto BOLD
+///  artist - M,T,D: 13/auto REG
+
+//// painting display page main:
+// painting year - M: 100, T,D: 200 BOLD
+// painting description -  M,T,D: 14/28 BOLD
+// painting title header - M: 24/29, T,D: 56/64 BOLD
+// painting artist - M,T,D: 15/auto REG
+// *** go to source link - M,T,D: 9/auto/1.93 BOLD
+// ** view image link - M,T,D: 10/auto/2.14 BOLD
+// ** close image link - M, T, D: 14/auto/3 BOLD
+//// painting display page footer:
+// painting title - 14/auto T,D: 18/auto BOLD
+// artist name - M: 10/auto, T,D: 13/auto REG
+
+// painting title
+h2 {
+  font-size: 1.5rem;
+  line-height: 1.8125rem;
+  font-weight: 700;
+
+  // only increases size on the slideshow page
+  &.slideshow-page {
+    @include breakpoint-up(medium) {
+      font-size: 3.5rem;
+      line-height: 4rem;
+      // same on large
+    }
+  }
+}
+
+// artist
+h3 {
+  font-size: 0.8125rem;
+  line-height: 1.0625rem;
+  font-weight: 400;
+  // same on all screen sizes
+
+  // slightly larger on slideshow page
+  &.slideshow-page {
+    font-size: 0.9375rem;
+    line-height: 1.1875rem;
+  }
+}
+
+// painting description
+p {
+  font-size: 0.875rem;
+  line-height: 1.75rem;
+  font-weight: 700;
+}
+
+a {
+  // default matches "go to source"
+  font-size: 0.5625rem;
+  line-height: 0.6875;
+  letter-spacing: 2px;
+  font-weight: 700;
+  text-transform: uppercase;
+
+  &.header-link {
+    text-decoration: none;
+
+    @include breakpoint-up(medium) {
+      font-size: 0.75rem;
+      line-height: 0.9375rem;
+      letter-spacing: 2.5px;
+    }
+  }
+
+  &.view-image-link {
+    font-size: 0.625rem;
+    letter-spacing: 2.14px;
+  }
+
+  &.close-image-link {
+    font-size: 0.875rem;
+    letter-spacing: 3px;
+  }
+}
