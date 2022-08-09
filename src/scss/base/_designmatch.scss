@@ -9,9 +9,9 @@ body {
     height: 100%;
     width: 100%;
     content: "";
-    background-image: url("../designmatch/Mobile - Home.png");
+    background-image: url("../designmatch/Mobile - Detail 1.png");
     background-size: 375px auto;
-    opacity: 0;
+    opacity: 0.3;
     pointer-events: none;
 
     @include breakpoint-up(medium) {

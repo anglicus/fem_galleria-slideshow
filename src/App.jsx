@@ -5,7 +5,7 @@ import "./css/App.css";
 import Paintings from "./data/data.json";
 import Header from "./components/Header";
 import PreviewGrid from "./components/PreviewGrid";
-import SlideShow from "./components/SlideShow";
+import SlideShowMain from "./components/SlideShowMain";
 import SlideShowFooter from "./components/SlideShowFooter";
 
 function App() {
@@ -29,8 +29,9 @@ function App() {
       />
       {slideShowOn ? (
         <div>
-          <SlideShow painting={Paintings[slideShowIndex]} />
+          <SlideShowMain painting={Paintings[slideShowIndex]} />
           <SlideShowFooter
+            slideShowProgress={((slideShowIndex + 1) / Paintings.length) * 100}
             deactivatedButton={
               slideShowIndex === 0
                 ? "back"

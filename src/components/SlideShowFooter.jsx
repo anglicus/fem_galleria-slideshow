@@ -11,6 +11,10 @@ const SlideShowFooter = (props) => {
 
   return (
     <footer className="footer">
+      <span
+        className="footer__progress-bar"
+        style={{ width: props.slideShowProgress + "%" }}
+      ></span>
       <div className="footer__text">
         <h2 className="footer__title footer-title">{props.title}</h2>
         <h3 className="footer__artist footer-artist">{props.artist}</h3>

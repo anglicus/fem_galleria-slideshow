@@ -71,6 +71,17 @@ h3 {
   }
 }
 
+// painting year
+h4 {
+  // painting year - M: 100, T,D: 200 BOLD
+  font-size: 6.25rem;
+  font-weight: 700;
+
+  @include breakpoint-up(medium) {
+    font-size: 12.5rem;
+  }
+}
+
 // painting description
 p {
   font-size: 0.875rem;
