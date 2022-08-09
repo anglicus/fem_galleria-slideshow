@@ -1,0 +1,12 @@
+// _preview-grid.scss
+
+@use "../abstracts/mixins" as *;
+
+.preview-grid {
+  @include breakpoint-up(large) {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(127, 10px);
+    grid-column: column;
+  }
+}
