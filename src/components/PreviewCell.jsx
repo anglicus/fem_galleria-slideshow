@@ -7,10 +7,6 @@ const PreviewCell = (props) => {
     "--desktop-col": props.desktopColumn,
     "--tablet-col": props.tabletColumn,
   };
-
-  console.log("Painting: ", props.title);
-  console.log("Height: ", cellImage.height);
-  console.log(cellStyle);
   const titleClass = props.title
     .replace(/\s/g, "-")
     .toLowerCase()

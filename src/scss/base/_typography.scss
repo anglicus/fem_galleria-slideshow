@@ -37,6 +37,15 @@ h2 {
       // same on large
     }
   }
+
+  &.footer-title {
+    font-size: 0.875rem;
+    font-weight: 700;
+
+    @include breakpoint-up(medium) {
+      font-size: 1.125rem;
+    }
+  }
 }
 
 // artist
@@ -50,6 +59,15 @@ h3 {
   &.slideshow-page {
     font-size: 0.9375rem;
     line-height: 1.1875rem;
+  }
+
+  &.footer-artist {
+    font-size: 0.625rem;
+    font-weight: 400;
+
+    @include breakpoint-up(medium) {
+      font-size: 0.8125rem;
+    }
   }
 }
 

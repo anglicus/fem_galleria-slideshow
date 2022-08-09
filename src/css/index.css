@@ -36,6 +36,15 @@ h2 {
     line-height: 4rem;
   }
 }
+h2.footer-title {
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+@media (min-width: 641px) {
+  h2.footer-title {
+    font-size: 1.125rem;
+  }
+}
 
 h3 {
   font-size: 0.8125rem;
@@ -45,6 +54,15 @@ h3 {
 h3.slideshow-page {
   font-size: 0.9375rem;
   line-height: 1.1875rem;
+}
+h3.footer-artist {
+  font-size: 0.625rem;
+  font-weight: 400;
+}
+@media (min-width: 641px) {
+  h3.footer-artist {
+    font-size: 0.8125rem;
+  }
 }
 
 p {
