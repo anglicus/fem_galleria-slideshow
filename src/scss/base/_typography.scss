@@ -90,7 +90,6 @@ p {
 }
 
 button {
-  // default matches "go to source"
   font-size: 0.5625rem;
   line-height: 0.6875;
   letter-spacing: 2px;
@@ -107,13 +106,22 @@ button {
     }
   }
 
-  &.view-image-link {
+  &.view-image {
     font-size: 0.625rem;
     letter-spacing: 2.14px;
   }
 
-  &.close-image-link {
+  &.close-image {
     font-size: 0.875rem;
     letter-spacing: 3px;
   }
+}
+
+a {
+  font-size: 0.5625rem;
+  line-height: 0.6875;
+  letter-spacing: 2px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: underline;
 }

@@ -8,9 +8,13 @@
   margin-top: 24px;
 
   &__thumbnail {
-    position: absolute;
     display: block;
-    right: 0;
+
+    @include breakpoint-up(medium) {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
   }
 
   &__text-div {

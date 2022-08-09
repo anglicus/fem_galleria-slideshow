@@ -7,10 +7,12 @@ import Header from "./components/Header";
 import PreviewGrid from "./components/PreviewGrid";
 import SlideShowMain from "./components/SlideShowMain";
 import SlideShowFooter from "./components/SlideShowFooter";
+import LightBox from "./components/LightBox";
 
 function App() {
   const [slideShowOn, setSlideShowOn] = useState(false);
   const [slideShowIndex, setSlideShowIndex] = useState(0);
+  const [lightBoxOpen, setLightBoxOpen] = useState(false);
 
   const toggleSlideShow = () => {
     setSlideShowOn(slideShowOn ? false : true);
@@ -21,6 +23,10 @@ function App() {
     setSlideShowIndex(nextIndex);
   };
 
+  const toggleLightBox = () => {
+    setLightBoxOpen(lightBoxOpen ? false : true);
+  };
+
   return (
     <div className="App">
       <Header
@@ -29,7 +35,10 @@ function App() {
       />
       {slideShowOn ? (
         <div>
-          <SlideShowMain painting={Paintings[slideShowIndex]} />
+          <SlideShowMain
+            painting={Paintings[slideShowIndex]}
+            toggleLightBox={toggleLightBox}
+          />
           <SlideShowFooter
             slideShowProgress={((slideShowIndex + 1) / Paintings.length) * 100}
             deactivatedButton={
@@ -47,6 +56,11 @@ function App() {
       ) : (
         <PreviewGrid paintings={Paintings} />
       )}
+      <LightBox
+        open={lightBoxOpen}
+        toggleLightBox={toggleLightBox}
+        painting={Paintings[slideShowIndex]}
+      />
     </div>
   );
 }

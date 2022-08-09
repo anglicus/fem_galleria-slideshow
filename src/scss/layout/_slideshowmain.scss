@@ -4,37 +4,65 @@
 @use "../abstracts/colors" as *;
 
 .slideshow {
-  padding: 24px 24px 0;
+  padding: 23px 23px 0 24px;
+  height: 986px;
 
   &__preview-div {
+    position: relative;
     & > img {
       display: block;
       width: 100%;
     }
   }
 
-  &__title-div {
-    background-color: $white;
+  &__button-view-image {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+  }
+
+  &__text-div {
     position: relative;
     top: -50px;
+  }
+
+  &__title-div {
+    background-color: $white;
+
     width: 280px;
+    padding: 24px;
+  }
+
+  &__artist {
+    margin-top: 8px;
   }
 
   &__artist-image {
     height: 64px;
     width: 64px;
+    margin-left: 16px;
   }
 
   &__painting-year {
     color: $veryLightGray;
     position: relative;
     text-align: right;
-    top: -32px;
+    top: -38px;
   }
 
   &__description {
     z-index: 2;
     position: relative;
     top: -76px;
+  }
+
+  &__link-source {
+    color: $medGray;
+    position: relative;
+    top: -15px;
+
+    &:hover {
+      color: $black;
+    }
   }
 }
