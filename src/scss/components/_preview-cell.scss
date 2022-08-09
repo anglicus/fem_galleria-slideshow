@@ -1,15 +1,20 @@
 // _preview-cell.scss
 
+@use "../abstracts/mixins" as *;
+
 .preview-cell {
   position: relative;
 
-  & > h2 {
+  &__text-div {
     position: absolute;
-    bottom: 0;
+    bottom: 52px;
   }
 
-  & > p {
-    position: absolute;
-    bottom: 0;
+  @include breakpoint-up(medium) {
+    grid-column: var(--tablet-col);
+  }
+
+  @include breakpoint-up(large) {
+    grid-column: var(--desktop-col);
   }
 }

@@ -3,10 +3,18 @@
 @use "../abstracts/mixins" as *;
 
 .preview-grid {
-  @include breakpoint-up(large) {
+  display: flex;
+  flex-direction: column;
+
+  @include breakpoint-up(medium) {
     display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(286, 10px);
+  }
+
+  @include breakpoint-up(large) {
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(127, 10px);
-    grid-column: column;
+    grid-template-rows: repeat(143, 10px);
   }
 }

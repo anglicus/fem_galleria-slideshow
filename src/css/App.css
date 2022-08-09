@@ -26,13 +26,19 @@ html {
 .preview-cell {
   position: relative;
 }
-.preview-cell > h2 {
+.preview-cell__text-div {
   position: absolute;
-  bottom: 0;
+  bottom: 52px;
 }
-.preview-cell > p {
-  position: absolute;
-  bottom: 0;
+@media (min-width: 641px) {
+  .preview-cell {
+    grid-column: var(--tablet-col);
+  }
+}
+@media (min-width: 1025px) {
+  .preview-cell {
+    grid-column: var(--desktop-col);
+  }
 }
 
 .attribution {
@@ -45,11 +51,26 @@ html {
   color: hsl(228deg, 45%, 44%);
 }
 
-@media (min-width: 1025px) {
+.preview-grid {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+@media (min-width: 641px) {
   .preview-grid {
     display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(286, 10px);
+  }
+}
+@media (min-width: 1025px) {
+  .preview-grid {
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(127, 10px);
-    grid-column: column;
+    grid-template-rows: repeat(143, 10px);
   }
 }/*# sourceMappingURL=App.css.map */
