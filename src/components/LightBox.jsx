@@ -1,14 +1,19 @@
 // LightBox.jsx
 
 const LightBox = (props) => {
-  const openClass = props.lightBoxOpen === true ? " open" : "";
+  const openClosingClass =
+    props.lightBoxClosing === true
+      ? " closing"
+      : props.lightBoxOpen === true
+      ? " open"
+      : "";
 
   return (
-    <div className={"lightbox" + openClass}>
+    <div className={"lightbox" + openClosingClass}>
       <div className="lightbox__display">
         <button
           className="lightbox__button-close close-image"
-          onClick={props.toggleLightBox}
+          onClick={props.closeLightBox}
         >
           close
         </button>

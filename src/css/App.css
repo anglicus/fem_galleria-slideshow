@@ -15,6 +15,7 @@ html {
 
 body {
   background-color: #ffffff;
+  overflow-x: hidden;
 }
 
 * {
@@ -262,6 +263,32 @@ button.button--arrow.inactive {
   position: relative;
   padding: 23px 23px 0 24px;
   height: 986px;
+  width: 100vw;
+}
+.slideshow__pageturn-div {
+  position: relative;
+  overflow: hidden;
+  width: 200vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.slideshow__pageturn-div.turn-right {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-animation: scroll-in-left 2s;
+          animation: scroll-in-left 2s;
+}
+.slideshow__pageturn-div.turn-left {
+  float: right;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  -webkit-animation: scroll-in-right 2s;
+          animation: scroll-in-right 2s;
 }
 @media (min-width: 641px) {
   .slideshow {
@@ -610,6 +637,71 @@ button.button--arrow.inactive {
   }
 }
 
+@-webkit-keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes scroll-in-left {
+  from {
+    right: 0%;
+  }
+  to {
+    right: 100%;
+  }
+}
+@keyframes scroll-in-left {
+  from {
+    right: 0%;
+  }
+  to {
+    right: 100%;
+  }
+}
+@-webkit-keyframes scroll-in-right {
+  from {
+    left: 0%;
+  }
+  to {
+    left: 100%;
+  }
+}
+@keyframes scroll-in-right {
+  from {
+    left: 0%;
+  }
+  to {
+    left: 100%;
+  }
+}
 .lightbox {
   display: none;
   position: fixed;
@@ -620,8 +712,15 @@ button.button--arrow.inactive {
   width: 100vw;
   background-color: rgba(0, 0, 0, 0.8588235294);
 }
+.lightbox.closing {
+  display: block;
+  -webkit-animation: fade-out 0.61s;
+          animation: fade-out 0.61s;
+}
 .lightbox.open {
   display: block;
+  -webkit-animation: fade-in 0.6s;
+          animation: fade-in 0.6s;
 }
 .lightbox__display {
   position: absolute;

@@ -14,6 +14,9 @@ function App() {
   const [slideShowIndex, setSlideShowIndex] = useState(0);
   const [lightBoxOpen, setLightBoxOpen] = useState(false);
   const [lightBoxClosing, setLightBoxClosing] = useState(false);
+  const [pageTurning, setPageTurning] = useState(false);
+  const [turnIncrement, setTurnIncrement] = useState(0);
+  const [turnClass, setTurnClass] = useState("");
 
   const toggleSlideShow = () => {
     // remove this line before production build
@@ -23,8 +26,17 @@ function App() {
   };
 
   const slideShowNext = (increment) => {
+    const newTurnClass = increment === 1 ? "turn-right" : "turn-left";
     const nextIndex = slideShowIndex + increment;
-    setSlideShowIndex(nextIndex);
+    setPageTurning(true);
+    setTurnClass(newTurnClass);
+    setTurnIncrement(increment);
+    setTimeout(() => {
+      setSlideShowIndex(nextIndex);
+      setPageTurning(false);
+      setTurnClass("");
+      setTurnIncrement(0);
+    }, 1990);
   };
 
   // for use when clicking directly on a thumbnail from the home page
@@ -53,13 +65,26 @@ function App() {
       <Header
         toggleSlideShow={toggleSlideShow}
         buttonText={slideShowOn ? "stop slideshow" : "start slideshow"}
+        pageTurning={pageTurning}
       />
+
       {slideShowOn ? (
         <div>
-          <SlideShowMain
-            painting={Paintings[slideShowIndex]}
-            toggleLightBox={toggleLightBox}
-          />
+          <div className={`slideshow__pageturn-div ${turnClass}`}>
+            <SlideShowMain
+              painting={Paintings[slideShowIndex]}
+              toggleLightBox={toggleLightBox}
+              pageTurning={pageTurning}
+            />
+            {pageTurning && (
+              <SlideShowMain
+                painting={Paintings[slideShowIndex + turnIncrement]}
+                toggleLightBox={toggleLightBox}
+                pageTurning={pageTurning}
+              />
+            )}
+          </div>
+
           <SlideShowFooter
             slideShowProgress={((slideShowIndex + 1) / Paintings.length) * 100}
             deactivatedButton={
@@ -72,6 +97,7 @@ function App() {
             slideShowNext={slideShowNext}
             title={Paintings[slideShowIndex].name}
             artist={Paintings[slideShowIndex].artist.name}
+            pageTurning={pageTurning}
           />
         </div>
       ) : (
@@ -85,6 +111,7 @@ function App() {
         lightBoxClosing={lightBoxClosing}
         closeLightBox={closeLightBox}
         painting={Paintings[slideShowIndex]}
+        pageTurning={pageTurning}
       />
     </div>
   );

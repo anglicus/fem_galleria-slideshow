@@ -2,6 +2,7 @@
 
 @use "../abstracts/mixins" as *;
 @use "../abstracts/colors" as *;
+@use "../abstracts/animations" as *;
 
 .lightbox {
   display: none;
@@ -13,8 +14,14 @@
   width: 100vw;
   background-color: #000000db;
 
+  &.closing {
+    display: block;
+    animation: fade-out 0.61s;
+  }
+
   &.open {
     display: block;
+    animation: fade-in 0.6s;
   }
 
   &__display {

@@ -14,7 +14,7 @@ const SlideShowMain = (props) => {
       <div className="slideshow__preview-div">
         <button
           className="slideshow__button-view-image view-image"
-          onClick={props.toggleLightBox}
+          onClick={props.pageTurning ? null : props.toggleLightBox}
         >
           <img
             className="slideshow__button-icon"

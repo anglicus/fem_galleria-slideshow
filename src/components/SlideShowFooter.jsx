@@ -25,7 +25,7 @@ const SlideShowFooter = (props) => {
             "footer__button button--arrow button--backward" + inactiveBack
           }
           onClick={
-            props.deactivatedButton === "back"
+            props.deactivatedButton === "back" || props.pageTurning
               ? null
               : () => props.slideShowNext(-1)
           }
@@ -37,7 +37,7 @@ const SlideShowFooter = (props) => {
             "footer__button button--arrow button--forward" + inactiveForward
           }
           onClick={
-            props.deactivatedButton === "forward"
+            props.deactivatedButton === "forward" || props.pageTurning
               ? null
               : () => props.slideShowNext(1)
           }

@@ -7,6 +7,25 @@
   position: relative;
   padding: 23px 23px 0 24px;
   height: 986px;
+  width: 100vw;
+
+  &__pageturn-div {
+    position: relative;
+    overflow: hidden;
+    width: 200vw;
+    display: flex;
+
+    &.turn-right {
+      flex-direction: row;
+      animation: scroll-in-left 2s;
+    }
+
+    &.turn-left {
+      float: right;
+      flex-direction: row-reverse;
+      animation: scroll-in-right 2s;
+    }
+  }
 
   @include breakpoint-up(medium) {
     height: 1055px;
