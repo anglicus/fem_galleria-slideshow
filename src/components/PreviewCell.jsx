@@ -1,17 +1,30 @@
+// PreviewCell.jsx
+
+import { useState, useEffect } from "react";
+
 const PreviewCell = (props) => {
-  const cellImage = new Image();
-  cellImage.src = props.source;
-  const rowSpan = Math.floor(cellImage.height / 5) + 8;
-  const cellStyle = {
-    gridRow: "span " + rowSpan,
-    "--desktop-col": props.desktopColumn,
-    "--tablet-col": props.tabletColumn,
-  };
+  const [cellStyle, setCellStyle] = useState({});
+
+  useEffect(() => {
+    const img = new Image();
+    img.src = props.source;
+    img.addEventListener("load", () => {
+      const rowSpan = Math.floor(img.height / 5) + 8;
+      const newCellStyle = {
+        gridRow: "span " + rowSpan,
+        "--desktop-col": props.desktopColumn,
+        "--tablet-col": props.tabletColumn,
+      };
+      setCellStyle(newCellStyle);
+    });
+  }, [props.source, props.desktopColumn, props.tabletColumn]);
+
   const titleClass = props.title
     .replace(/\s/g, "-")
     .toLowerCase()
     .normalize("NFD")
     .replace(/[\u0300-\u036f]/g, "");
+
   return (
     <div className={`preview-cell ${titleClass}`} style={cellStyle}>
       {
