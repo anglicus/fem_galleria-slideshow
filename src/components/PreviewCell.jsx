@@ -35,7 +35,7 @@ const PreviewCell = (props) => {
         ></img>
       }
       <div className="preview-cell__text-div">
-        <h2 className="preview-cell__title">{props.title}</h2>
+        <h2 className={`preview-cell__title ${titleClass}`}>{props.title}</h2>
         <h3 className="preview-cell__artist">{props.artist}</h3>
       </div>
     </div>

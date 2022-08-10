@@ -7,6 +7,20 @@
   position: relative;
   margin-top: 24px;
 
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: 2;
+    height: 170px;
+    width: 100%;
+    bottom: 0px;
+    background: linear-gradient(transparent, black);
+
+    @include breakpoint-up(medium) {
+      bottom: 40px;
+    }
+  }
+
   &__thumbnail {
     display: block;
 
@@ -20,8 +34,9 @@
   &__text-div {
     position: absolute;
     bottom: 32px;
-    padding: 0 48px 0 32px;
+    padding: 0 32px 0 32px;
     color: $white;
+    z-index: 2;
 
     @include breakpoint-up(medium) {
       bottom: 72px;
@@ -30,6 +45,14 @@
 
   &__title {
     margin-bottom: 8px;
+
+    &.van-gogh-self-portrait {
+      padding-right: 80px;
+    }
+
+    &.the-boy-in-the-red-vest {
+      padding-right: 28px;
+    }
   }
 
   @include breakpoint-up(medium) {

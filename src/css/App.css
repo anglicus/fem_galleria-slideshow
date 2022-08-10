@@ -120,6 +120,21 @@ a {
   position: relative;
   margin-top: 24px;
 }
+.preview-cell::before {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  height: 170px;
+  width: 100%;
+  bottom: 0px;
+  background: -webkit-gradient(linear, left top, left bottom, from(transparent), to(black));
+  background: linear-gradient(transparent, black);
+}
+@media (min-width: 641px) {
+  .preview-cell::before {
+    bottom: 40px;
+  }
+}
 .preview-cell__thumbnail {
   display: block;
 }
@@ -133,8 +148,9 @@ a {
 .preview-cell__text-div {
   position: absolute;
   bottom: 32px;
-  padding: 0 48px 0 32px;
+  padding: 0 32px 0 32px;
   color: #ffffff;
+  z-index: 2;
 }
 @media (min-width: 641px) {
   .preview-cell__text-div {
@@ -143,6 +159,12 @@ a {
 }
 .preview-cell__title {
   margin-bottom: 8px;
+}
+.preview-cell__title.van-gogh-self-portrait {
+  padding-right: 80px;
+}
+.preview-cell__title.the-boy-in-the-red-vest {
+  padding-right: 28px;
 }
 @media (min-width: 641px) {
   .preview-cell {
