@@ -33,4 +33,18 @@ button {
       background-color: #ffffff41;
     }
   }
+
+  &.button--arrow {
+    width: 25px;
+    height: 24px;
+
+    &:hover {
+      opacity: 50%;
+    }
+
+    &.inactive {
+      opacity: 15%;
+      cursor: default;
+    }
+  }
 }

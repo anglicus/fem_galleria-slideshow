@@ -20,7 +20,9 @@ const SlideShowFooter = (props) => {
         <h3 className="footer__artist footer-artist">{props.artist}</h3>
       </div>
       <button
-        className={"slideshow__button button-backward" + inactiveBack}
+        className={
+          "slideshow__button button--arrow button--backward" + inactiveBack
+        }
         onClick={
           props.deactivatedButton === "back"
             ? null
@@ -30,7 +32,9 @@ const SlideShowFooter = (props) => {
         <img src={iconBackward} alt="back icon" />
       </button>
       <button
-        className={"slideshow__button button-forward" + inactiveForward}
+        className={
+          "slideshow__button button--arrow button--forward" + inactiveForward
+        }
         onClick={
           props.deactivatedButton === "forward"
             ? null

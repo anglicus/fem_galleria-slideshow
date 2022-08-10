@@ -193,6 +193,17 @@ button.view-image {
 button.view-image:hover {
   background-color: rgba(255, 255, 255, 0.2549019608);
 }
+button.button--arrow {
+  width: 25px;
+  height: 24px;
+}
+button.button--arrow:hover {
+  opacity: 50%;
+}
+button.button--arrow.inactive {
+  opacity: 15%;
+  cursor: default;
+}
 
 .attribution {
   margin-top: 16px;
