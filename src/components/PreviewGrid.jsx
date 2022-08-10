@@ -7,7 +7,7 @@ const tabletColumns = [1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 2, 1, 2, 1, 2];
 
 const PreviewGrid = (props) => {
   return (
-    <div className="preview-grid">
+    <main className="preview-grid">
       {props.paintings.map((painting, i) => (
         <PreviewCell
           source={painting.images.thumbnail}
@@ -18,7 +18,7 @@ const PreviewGrid = (props) => {
           key={painting.name}
         />
       ))}
-    </div>
+    </main>
   );
 };
 

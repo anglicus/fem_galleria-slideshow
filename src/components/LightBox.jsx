@@ -1,7 +1,7 @@
 // LightBox.jsx
 
 const LightBox = (props) => {
-  const openClass = props.open === true ? " open" : "";
+  const openClass = props.lightBoxOpen === true ? " open" : "";
 
   return (
     <div className={"lightbox" + openClass}>

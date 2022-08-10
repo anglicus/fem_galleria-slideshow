@@ -193,9 +193,15 @@ button.view-image {
 button.view-image:hover {
   background-color: rgba(255, 255, 255, 0.2549019608);
 }
-button.button--arrow {
-  width: 25px;
-  height: 24px;
+button.button--arrow > img {
+  width: 17px;
+  height: 16px;
+}
+@media (min-width: 641px) {
+  button.button--arrow > img {
+    height: 24px;
+    width: 25px;
+  }
 }
 button.button--arrow:hover {
   opacity: 50%;
@@ -216,56 +222,189 @@ button.button--arrow.inactive {
 }
 
 .slideshow {
+  position: relative;
   padding: 23px 23px 0 24px;
   height: 986px;
 }
+@media (min-width: 641px) {
+  .slideshow {
+    height: 1095px;
+    padding: 0 40px 40px;
+    margin-top: 40px;
+  }
+}
+@media (min-width: 1025px) {
+  .slideshow {
+    margin-top: 100px;
+    height: 699px;
+  }
+}
 .slideshow__preview-div {
   position: relative;
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
 }
-.slideshow__preview-div > img {
+.slideshow__hero-small {
   display: block;
   width: 100%;
+}
+@media (min-width: 641px) {
+  .slideshow__hero-small {
+    display: none;
+  }
+}
+.slideshow__hero-large {
+  display: none;
+}
+@media (min-width: 641px) {
+  .slideshow__hero-large {
+    display: block;
+    width: 475px;
+  }
 }
 .slideshow__button-view-image {
   position: absolute;
   top: 16px;
   left: 16px;
 }
-.slideshow__text-div {
-  position: relative;
-  top: -50px;
+@media (min-width: 641px) {
+  .slideshow__button-view-image {
+    top: auto;
+    bottom: 16px;
+  }
 }
 .slideshow__title-div {
-  background-color: #ffffff;
+  position: relative;
+  z-index: 2;
+  margin-top: -80px;
   width: 280px;
+}
+@media (min-width: 641px) {
+  .slideshow__title-div {
+    position: absolute;
+    margin-top: 0;
+    top: 0;
+    left: 283px;
+    width: 390px;
+  }
+}
+@media (min-width: 1025px) {
+  .slideshow__title-div {
+    position: absolute;
+    left: calc(450px - (1440px - 100vw) / 1.5);
+    height: 100%;
+  }
+}
+.slideshow__title-background-div {
+  position: absolute;
+  bottom: 25;
   padding: 24px;
+  background-color: #ffffff;
+}
+@media (min-width: 641px) {
+  .slideshow__title-background-div {
+    padding: 0px 6px 66px 65px;
+  }
 }
 .slideshow__artist {
   margin-top: 8px;
+}
+@media (min-width: 641px) {
+  .slideshow__artist {
+    margin-top: 24px;
+  }
 }
 .slideshow__artist-image {
   height: 64px;
   width: 64px;
   margin-left: 16px;
 }
+@media (min-width: 641px) {
+  .slideshow__artist-image {
+    height: 128px;
+    width: 128px;
+    display: block;
+    float: right;
+  }
+}
+@media (min-width: 1025px) {
+  .slideshow__artist-image {
+    position: absolute;
+    bottom: 75px;
+    left: 79px;
+  }
+}
+.slideshow__text-div {
+  position: relative;
+  margin-top: -62px;
+}
+@media (min-width: 641px) {
+  .slideshow__text-div {
+    margin-top: 16px;
+  }
+}
+@media (min-width: 1025px) {
+  .slideshow__text-div {
+    position: absolute;
+    top: -46px;
+    right: 40px;
+    margin: 0;
+    width: 476px;
+    height: 100%;
+  }
+}
 .slideshow__painting-year {
   color: #f3f3f3;
   position: relative;
+  z-index: 3;
   text-align: right;
-  top: -38px;
+}
+@media (min-width: 641px) {
+  .slideshow__painting-year {
+    text-align: left;
+  }
+}
+@media (min-width: 1025px) {
+  .slideshow__painting-year {
+    text-align: right;
+  }
 }
 .slideshow__description {
-  z-index: 2;
+  z-index: 4;
   position: relative;
-  top: -76px;
+  margin-top: -38px;
+  margin-bottom: 40px;
+}
+@media (min-width: 641px) {
+  .slideshow__description {
+    margin: -124px 115px 40px 115px;
+  }
+}
+@media (min-width: 1025px) {
+  .slideshow__description {
+    margin: -86px 130px 72px 0px;
+  }
 }
 .slideshow__link-source {
   color: #7d7d7d;
   position: relative;
-  top: -15px;
 }
 .slideshow__link-source:hover {
   color: #000000;
+}
+@media (min-width: 641px) {
+  .slideshow__link-source {
+    margin-left: 115px;
+  }
+}
+@media (min-width: 1025px) {
+  .slideshow__link-source {
+    position: absolute;
+    margin: 0;
+    left: 0;
+    bottom: 88px;
+  }
 }
 
 .header {
@@ -308,7 +447,7 @@ button.button--arrow.inactive {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding: 0 calc((100vw - 327px) / 2) 0;
+  padding: 0 calc((100vw - 327px) / 2) 24px;
 }
 @media (min-width: 641px) {
   .preview-grid {
@@ -333,6 +472,25 @@ button.button--arrow.inactive {
 .footer {
   position: relative;
   border-top: 1px solid #e5e5e5;
+  padding: 9px 24px 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+@media (min-width: 641px) {
+  .footer {
+    padding: 20px 40px 24px;
+  }
 }
 .footer__progress-bar {
   position: absolute;
@@ -341,11 +499,27 @@ button.button--arrow.inactive {
   display: block;
   border-top: 1px solid black;
 }
+@media (min-width: 641px) {
+  .footer__artist {
+    margin-top: 5px;
+  }
+}
+.footer__button-div {
+  margin-top: 6px;
+}
+.footer__button.button--forward {
+  margin-left: 24px;
+}
+@media (min-width: 641px) {
+  .footer__button.button--forward {
+    margin-left: 40px;
+  }
+}
 
 .lightbox {
   display: none;
-  position: absolute;
-  z-index: 3;
+  position: fixed;
+  z-index: 5;
   top: 0;
   left: 0;
   height: 100vh;
@@ -361,18 +535,39 @@ button.button--arrow.inactive {
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  width: 327px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 .lightbox__button-close {
-  position: absolute;
-  right: 0;
-  top: -49px;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
   margin-bottom: 33px;
   color: #ffffff;
 }
+@media (min-width: 641px) {
+  .lightbox__button-close {
+    margin-bottom: 40px;
+  }
+}
 .lightbox__image {
   display: block;
-  width: 100%;
+  margin: 0 auto;
+  max-width: calc(100vw - 48px);
+}
+@media (min-width: 641px) {
+  .lightbox__image {
+    max-height: 712px;
+    max-width: calc(100vw - 80px);
+    width: auto;
+  }
 }
 
 body::before {
@@ -383,20 +578,56 @@ body::before {
   height: 100%;
   width: 100%;
   content: "";
-  background-image: url("../designmatch/Mobile - Gallery 1.png");
-  background-size: 375px auto;
   opacity: 0;
   pointer-events: none;
+  background-size: 375px auto;
 }
 @media (min-width: 641px) {
   body::before {
-    background-image: url("../designmatch/Tablet - Home.png");
     background-size: 768px auto;
   }
 }
 @media (min-width: 1025px) {
   body::before {
-    background-image: url("../designmatch/Desktop - Home.png");
     background-size: 1440px auto;
+  }
+}
+body.normal::before {
+  background-image: url("../designmatch/Mobile - Home.png");
+}
+@media (min-width: 641px) {
+  body.normal::before {
+    background-image: url("../designmatch/Tablet - Home.png");
+  }
+}
+@media (min-width: 1025px) {
+  body.normal::before {
+    background-image: url("../designmatch/Desktop - Home.png");
+  }
+}
+body.slideshow-on::before {
+  background-image: url("../designmatch/Mobile - Detail 3.png");
+}
+@media (min-width: 641px) {
+  body.slideshow-on::before {
+    background-image: url("../designmatch/Tablet - Detail 3.png");
+  }
+}
+@media (min-width: 1025px) {
+  body.slideshow-on::before {
+    background-image: url("../designmatch/Desktop - Detail 3.png");
+  }
+}
+body.lightbox-on::before {
+  background-image: url("../designmatch/Mobile - Gallery 1.png");
+}
+@media (min-width: 641px) {
+  body.lightbox-on::before {
+    background-image: url("../designmatch/Tablet - Gallery 1.png");
+  }
+}
+@media (min-width: 1025px) {
+  body.lightbox-on::before {
+    background-image: url("../designmatch/Desktop - Gallery 1.png");
   }
 }/*# sourceMappingURL=App.css.map */

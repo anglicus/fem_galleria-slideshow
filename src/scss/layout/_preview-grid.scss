@@ -6,7 +6,7 @@
 .preview-grid {
   display: flex;
   flex-direction: column;
-  padding: 0 calc((100vw - 327px) / 2) 0;
+  padding: 0 calc((100vw - 327px) / 2) 24px;
 
   @include breakpoint-up(medium) {
     display: grid;

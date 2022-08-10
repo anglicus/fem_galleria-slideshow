@@ -1,6 +1,7 @@
 // _buttons.scss
 
 @use "../abstracts/colors" as *;
+@use "../abstracts/mixins" as *;
 @use "sass:color";
 
 button {
@@ -35,8 +36,15 @@ button {
   }
 
   &.button--arrow {
-    width: 25px;
-    height: 24px;
+    & > img {
+      width: 17px;
+      height: 16px;
+
+      @include breakpoint-up(medium) {
+        height: 24px;
+        width: 25px;
+      }
+    }
 
     &:hover {
       opacity: 50%;

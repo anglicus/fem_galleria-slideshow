@@ -5,8 +5,8 @@
 
 .lightbox {
   display: none;
-  position: absolute;
-  z-index: 3;
+  position: fixed;
+  z-index: 5;
   top: 0;
   left: 0;
   height: 100vh;
@@ -22,20 +22,30 @@
     top: 48.5%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 327px;
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
   }
 
   &__button-close {
-    position: absolute;
-    right: 0;
-    top: -49px;
+    align-self: flex-end;
     margin-bottom: 33px;
-
     color: $white;
+
+    @include breakpoint-up(medium) {
+      margin-bottom: 40px;
+    }
   }
 
   &__image {
     display: block;
-    width: 100%;
+    margin: 0 auto;
+    max-width: calc(100vw - 48px);
+
+    @include breakpoint-up(medium) {
+      max-height: 712px;
+      max-width: calc(100vw - 80px);
+      width: auto;
+    }
   }
 }

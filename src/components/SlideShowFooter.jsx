@@ -19,30 +19,32 @@ const SlideShowFooter = (props) => {
         <h2 className="footer__title footer-title">{props.title}</h2>
         <h3 className="footer__artist footer-artist">{props.artist}</h3>
       </div>
-      <button
-        className={
-          "slideshow__button button--arrow button--backward" + inactiveBack
-        }
-        onClick={
-          props.deactivatedButton === "back"
-            ? null
-            : () => props.slideShowNext(-1)
-        }
-      >
-        <img src={iconBackward} alt="back icon" />
-      </button>
-      <button
-        className={
-          "slideshow__button button--arrow button--forward" + inactiveForward
-        }
-        onClick={
-          props.deactivatedButton === "forward"
-            ? null
-            : () => props.slideShowNext(1)
-        }
-      >
-        <img src={iconForward} alt="next icon" />
-      </button>
+      <div className="footer__button-div">
+        <button
+          className={
+            "footer__button button--arrow button--backward" + inactiveBack
+          }
+          onClick={
+            props.deactivatedButton === "back"
+              ? null
+              : () => props.slideShowNext(-1)
+          }
+        >
+          <img src={iconBackward} alt="back icon" />
+        </button>
+        <button
+          className={
+            "footer__button button--arrow button--forward" + inactiveForward
+          }
+          onClick={
+            props.deactivatedButton === "forward"
+              ? null
+              : () => props.slideShowNext(1)
+          }
+        >
+          <img src={iconForward} alt="next icon" />
+        </button>
+      </div>
     </footer>
   );
 };

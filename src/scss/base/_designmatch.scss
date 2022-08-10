@@ -9,19 +9,70 @@ body {
     height: 100%;
     width: 100%;
     content: "";
-    background-image: url("../designmatch/Mobile - Gallery 1.png");
-    background-size: 375px auto;
     opacity: 0;
     pointer-events: none;
 
+    background-size: 375px auto;
+
     @include breakpoint-up(medium) {
-      background-image: url("../designmatch/Tablet - Home.png");
       background-size: 768px auto;
     }
 
     @include breakpoint-up(large) {
-      background-image: url("../designmatch/Desktop - Home.png");
       background-size: 1440px auto;
+    }
+  }
+
+  &.normal {
+    &::before {
+      background-image: url("../designmatch/Mobile - Home.png");
+    }
+
+    @include breakpoint-up(medium) {
+      &::before {
+        background-image: url("../designmatch/Tablet - Home.png");
+      }
+    }
+
+    @include breakpoint-up(large) {
+      &::before {
+        background-image: url("../designmatch/Desktop - Home.png");
+      }
+    }
+  }
+
+  &.slideshow-on {
+    &::before {
+      background-image: url("../designmatch/Mobile - Detail 3.png");
+    }
+
+    @include breakpoint-up(medium) {
+      &::before {
+        background-image: url("../designmatch/Tablet - Detail 3.png");
+      }
+    }
+
+    @include breakpoint-up(large) {
+      &::before {
+        background-image: url("../designmatch/Desktop - Detail 3.png");
+      }
+    }
+  }
+
+  &.lightbox-on {
+    &::before {
+      background-image: url("../designmatch/Mobile - Gallery 1.png");
+    }
+    @include breakpoint-up(medium) {
+      &::before {
+        background-image: url("../designmatch/Tablet - Gallery 1.png");
+      }
+    }
+
+    @include breakpoint-up(large) {
+      &::before {
+        background-image: url("../designmatch/Desktop - Gallery 1.png");
+      }
     }
   }
 }

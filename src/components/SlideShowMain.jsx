@@ -17,10 +17,19 @@ const SlideShowMain = (props) => {
           />
           view image
         </button>
-        <img src={props.painting.images.hero.small} alt={props.painting.name} />
+        <img
+          className="slideshow__hero-large"
+          src={props.painting.images.hero.large}
+          alt={props.painting.name}
+        />
+        <img
+          className="slideshow__hero-small"
+          src={props.painting.images.hero.small}
+          alt={props.painting.name}
+        />
       </div>
-      <div className="slideshow__text-div">
-        <div className="slideshow__title-div">
+      <div className="slideshow__title-div">
+        <div className="slideshow__title-background-div">
           <h2 className="slideshow__title slideshow-page">
             {props.painting.name}
           </h2>
@@ -33,6 +42,8 @@ const SlideShowMain = (props) => {
           src={props.painting.artist.image}
           alt={props.painting.artist.name}
         />
+      </div>
+      <div className="slideshow__text-div">
         <h4 className="slideshow__painting-year">{props.painting.year}</h4>
         <p className="slideshow__description">{props.painting.description}</p>
         <a

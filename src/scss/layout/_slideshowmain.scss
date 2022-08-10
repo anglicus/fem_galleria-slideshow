@@ -4,14 +4,41 @@
 @use "../abstracts/colors" as *;
 
 .slideshow {
+  position: relative;
   padding: 23px 23px 0 24px;
   height: 986px;
 
+  @include breakpoint-up(medium) {
+    height: 1095px;
+    padding: 0 40px 40px;
+    margin-top: 40px;
+  }
+
+  @include breakpoint-up(large) {
+    margin-top: 100px;
+    height: 699px;
+  }
+
   &__preview-div {
     position: relative;
-    & > img {
+    height: min-content;
+  }
+
+  &__hero-small {
+    display: block;
+    width: 100%;
+
+    @include breakpoint-up(medium) {
+      display: none;
+    }
+  }
+
+  &__hero-large {
+    display: none;
+
+    @include breakpoint-up(medium) {
       display: block;
-      width: 100%;
+      width: 475px;
     }
   }
 
@@ -19,50 +46,138 @@
     position: absolute;
     top: 16px;
     left: 16px;
-  }
 
-  &__text-div {
-    position: relative;
-    top: -50px;
+    @include breakpoint-up(medium) {
+      top: auto;
+      bottom: 16px;
+    }
   }
 
   &__title-div {
-    background-color: $white;
+    position: relative;
+    z-index: 2;
+    margin-top: -80px;
 
     width: 280px;
+
+    @include breakpoint-up(medium) {
+      position: absolute;
+      margin-top: 0;
+      top: 0;
+      left: 283px;
+      width: 390px;
+    }
+
+    @include breakpoint-up(large) {
+      position: absolute;
+      left: calc(450px - (1440px - 100vw) / 1.5);
+      height: 100%;
+    }
+  }
+
+  &__title-background-div {
+    position: absolute;
+    bottom: 25;
     padding: 24px;
+    background-color: $white;
+
+    @include breakpoint-up(medium) {
+      padding: 0px 6px 66px 65px;
+    }
   }
 
   &__artist {
     margin-top: 8px;
+
+    @include breakpoint-up(medium) {
+      margin-top: 24px;
+    }
   }
 
   &__artist-image {
     height: 64px;
     width: 64px;
     margin-left: 16px;
+
+    @include breakpoint-up(medium) {
+      height: 128px;
+      width: 128px;
+      display: block;
+      float: right;
+    }
+
+    @include breakpoint-up(large) {
+      position: absolute;
+      bottom: 75px;
+      left: 79px;
+    }
+  }
+
+  &__text-div {
+    position: relative;
+    margin-top: -62px;
+
+    @include breakpoint-up(medium) {
+      margin-top: 16px;
+    }
+
+    @include breakpoint-up(large) {
+      position: absolute;
+      top: -46px;
+      right: 40px;
+      margin: 0;
+      width: 476px;
+      height: 100%;
+    }
   }
 
   &__painting-year {
     color: $veryLightGray;
     position: relative;
+    z-index: 3;
     text-align: right;
-    top: -38px;
+
+    @include breakpoint-up(medium) {
+      text-align: left;
+    }
+
+    @include breakpoint-up(large) {
+      text-align: right;
+    }
   }
 
   &__description {
-    z-index: 2;
+    z-index: 4;
     position: relative;
-    top: -76px;
+    margin-top: -38px;
+    margin-bottom: 40px;
+
+    @include breakpoint-up(medium) {
+      margin: -124px 115px 40px 115px;
+    }
+
+    @include breakpoint-up(large) {
+      margin: -86px 130px 72px 0px;
+    }
   }
 
   &__link-source {
     color: $medGray;
     position: relative;
-    top: -15px;
 
     &:hover {
       color: $black;
+    }
+
+    @include breakpoint-up(medium) {
+      margin-left: 115px;
+    }
+
+    @include breakpoint-up(large) {
+      position: absolute;
+      margin: 0;
+      left: 0;
+      bottom: 88px;
     }
   }
 }

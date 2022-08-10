@@ -15,6 +15,9 @@ function App() {
   const [lightBoxOpen, setLightBoxOpen] = useState(false);
 
   const toggleSlideShow = () => {
+    // remove this line before production build
+    document.body.className = slideShowOn ? "normal" : "slideshow-on";
+    //
     setSlideShowOn(slideShowOn ? false : true);
   };
 
@@ -24,6 +27,9 @@ function App() {
   };
 
   const toggleLightBox = () => {
+    // remove this line before production build
+    document.body.className = lightBoxOpen ? "slideshow-on" : "lightbox-on";
+    //
     setLightBoxOpen(lightBoxOpen ? false : true);
   };
 
@@ -57,7 +63,7 @@ function App() {
         <PreviewGrid paintings={Paintings} />
       )}
       <LightBox
-        open={lightBoxOpen}
+        lightBoxOpen={lightBoxOpen}
         toggleLightBox={toggleLightBox}
         painting={Paintings[slideShowIndex]}
       />
