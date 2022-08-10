@@ -2,11 +2,17 @@
 
 @use "../abstracts/mixins" as *;
 @use "../abstracts/colors" as *;
+@use "../abstracts/animations" as *;
 
 .preview-cell {
   position: relative;
   margin-top: 24px;
   cursor: pointer;
+
+  animation: fade-in 1s;
+  animation-delay: var(--animation-delay);
+  opacity: 0;
+  animation-fill-mode: forwards;
 
   &::before {
     content: "";
@@ -23,7 +29,7 @@
   }
 
   &:hover {
-    opacity: 50%;
+    filter: opacity(0.5);
   }
 
   &__thumbnail {

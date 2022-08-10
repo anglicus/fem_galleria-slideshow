@@ -36,7 +36,7 @@ function App() {
       setPageTurning(false);
       setTurnClass("");
       setTurnIncrement(0);
-    }, 1990);
+    }, 590);
   };
 
   // for use when clicking directly on a thumbnail from the home page
