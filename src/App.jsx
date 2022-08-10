@@ -13,6 +13,7 @@ function App() {
   const [slideShowOn, setSlideShowOn] = useState(false);
   const [slideShowIndex, setSlideShowIndex] = useState(0);
   const [lightBoxOpen, setLightBoxOpen] = useState(false);
+  const [lightBoxClosing, setLightBoxClosing] = useState(false);
 
   const toggleSlideShow = () => {
     // remove this line before production build
@@ -37,6 +38,14 @@ function App() {
     document.body.className = lightBoxOpen ? "slideshow-on" : "lightbox-on";
     //
     setLightBoxOpen(lightBoxOpen ? false : true);
+  };
+
+  const closeLightBox = () => {
+    setLightBoxClosing(true);
+    setTimeout(() => {
+      setLightBoxOpen(false);
+      setLightBoxClosing(false);
+    }, 600);
   };
 
   return (
@@ -73,7 +82,8 @@ function App() {
       )}
       <LightBox
         lightBoxOpen={lightBoxOpen}
-        toggleLightBox={toggleLightBox}
+        lightBoxClosing={lightBoxClosing}
+        closeLightBox={closeLightBox}
         painting={Paintings[slideShowIndex]}
       />
     </div>
