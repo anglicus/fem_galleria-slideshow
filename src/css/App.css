@@ -186,14 +186,16 @@ a {
   .preview-cell {
     margin-top: 0;
     grid-column: var(--tablet-col);
-    width: 324px;
+    width: 100%;
+    max-width: 324px;
     overflow: hidden;
   }
 }
 @media (min-width: 1024px) {
   .preview-cell {
     grid-column: var(--desktop-col);
-    width: 310px;
+    width: 100%;
+    max-width: 310px;
   }
 }
 
@@ -648,10 +650,11 @@ button.button--arrow.inactive {
     grid-auto-flow: column;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(572, 5px);
+    justify-items: center;
     -webkit-column-gap: 40px;
        -moz-column-gap: 40px;
             column-gap: 40px;
-    padding: 40px calc((100vw - 688px) / 2) 0;
+    padding: 40px 40px 0;
   }
 }
 @media (min-width: 1024px) {

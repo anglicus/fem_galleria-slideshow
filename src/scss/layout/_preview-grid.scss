@@ -3,6 +3,7 @@
 @use "../abstracts/mixins" as *;
 @use "../abstracts/colors" as *;
 @use "../abstracts/animations" as *;
+@use "sass:math";
 
 .preview-grid {
   display: flex;
@@ -15,8 +16,10 @@
     grid-auto-flow: column;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(572, 5px);
+    justify-items: center;
     column-gap: 40px;
-    padding: 40px calc((100vw - 688px) / 2) 0;
+    padding: 40px 40px 0;
+    // padding: 40px calc((100vw - 688px) / 2) 0;
   }
 
   @include breakpoint-up(large) {

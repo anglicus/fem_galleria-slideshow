@@ -75,13 +75,14 @@
   @include breakpoint-up(medium) {
     margin-top: 0;
     grid-column: var(--tablet-col);
-
-    width: 324px;
+    width: 100%;
+    max-width: 324px;
     overflow: hidden;
   }
 
   @include breakpoint-up(large) {
     grid-column: var(--desktop-col);
-    width: 310px;
+    width: 100%; // 310px;
+    max-width: 310px;
   }
 }
