@@ -2,11 +2,13 @@
 
 @use "../abstracts/mixins" as *;
 @use "../abstracts/colors" as *;
+@use "../abstracts/animations" as *;
 
 .preview-grid {
   display: flex;
   flex-direction: column;
   padding: 0 calc((100vw - 327px) / 2) 24px;
+  animation: fade-in 1s;
 
   @include breakpoint-up(medium) {
     display: grid;

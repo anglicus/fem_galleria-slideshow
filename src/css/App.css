@@ -231,6 +231,9 @@ button.view-image {
 button.view-image:hover {
   background-color: rgba(255, 255, 255, 0.2549019608);
 }
+button.close-image:hover {
+  opacity: 0.25;
+}
 button.button--arrow > img {
   width: 17px;
   height: 16px;
@@ -259,11 +262,78 @@ button.button--arrow.inactive {
   color: hsl(228deg, 45%, 44%);
 }
 
+@-webkit-keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes scroll-in-left {
+  from {
+    right: 0%;
+  }
+  to {
+    right: 100%;
+  }
+}
+@keyframes scroll-in-left {
+  from {
+    right: 0%;
+  }
+  to {
+    right: 100%;
+  }
+}
+@-webkit-keyframes scroll-in-right {
+  from {
+    left: 0%;
+  }
+  to {
+    left: 100%;
+  }
+}
+@keyframes scroll-in-right {
+  from {
+    left: 0%;
+  }
+  to {
+    left: 100%;
+  }
+}
 .slideshow {
   position: relative;
   padding: 23px 23px 0 24px;
   height: 986px;
   width: 100vw;
+  -webkit-animation: fade-in 1s;
+          animation: fade-in 1s;
 }
 .slideshow__pageturn-div {
   position: relative;
@@ -569,6 +639,8 @@ button.button--arrow.inactive {
       -ms-flex-direction: column;
           flex-direction: column;
   padding: 0 calc((100vw - 327px) / 2) 24px;
+  -webkit-animation: fade-in 1s;
+          animation: fade-in 1s;
 }
 @media (min-width: 641px) {
   .preview-grid {
@@ -607,6 +679,8 @@ button.button--arrow.inactive {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-animation: fade-in 1s;
+          animation: fade-in 1s;
 }
 @media (min-width: 641px) {
   .footer {
@@ -637,71 +711,6 @@ button.button--arrow.inactive {
   }
 }
 
-@-webkit-keyframes fade-in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes fade-in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-@-webkit-keyframes fade-out {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
-}
-@keyframes fade-out {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
-}
-@-webkit-keyframes scroll-in-left {
-  from {
-    right: 0%;
-  }
-  to {
-    right: 100%;
-  }
-}
-@keyframes scroll-in-left {
-  from {
-    right: 0%;
-  }
-  to {
-    right: 100%;
-  }
-}
-@-webkit-keyframes scroll-in-right {
-  from {
-    left: 0%;
-  }
-  to {
-    left: 100%;
-  }
-}
-@keyframes scroll-in-right {
-  from {
-    left: 0%;
-  }
-  to {
-    left: 100%;
-  }
-}
 .lightbox {
   display: none;
   position: fixed;

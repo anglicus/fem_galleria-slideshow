@@ -2,12 +2,15 @@
 
 @use "../abstracts/mixins" as *;
 @use "../abstracts/colors" as *;
+@use "../abstracts/animations" as *;
 
 .slideshow {
   position: relative;
   padding: 23px 23px 0 24px;
   height: 986px;
   width: 100vw;
+
+  animation: fade-in 1s;
 
   &__pageturn-div {
     position: relative;

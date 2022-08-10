@@ -35,6 +35,12 @@ button {
     }
   }
 
+  &.close-image {
+    &:hover {
+      opacity: 0.25;
+    }
+  }
+
   &.button--arrow {
     & > img {
       width: 17px;

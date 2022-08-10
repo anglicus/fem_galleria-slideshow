@@ -2,6 +2,7 @@
 
 @use "../abstracts/mixins" as *;
 @use "../abstracts/colors" as *;
+@use "../abstracts/animations" as *;
 
 .footer {
   position: relative;
@@ -13,6 +14,8 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+
+  animation: fade-in 1s;
 
   @include breakpoint-up(medium) {
     padding: 20px 40px 24px;
