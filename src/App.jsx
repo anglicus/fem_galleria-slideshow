@@ -67,40 +67,39 @@ function App() {
         buttonText={slideShowOn ? "stop slideshow" : "start slideshow"}
         pageTurning={pageTurning}
       />
-
-      {slideShowOn ? (
-        <div>
-          <div className={`slideshow__pageturn-div ${turnClass}`}>
+      {slideShowOn && (
+        <div className={`slideshow__pageturn-div ${turnClass}`}>
+          <SlideShowMain
+            painting={Paintings[slideShowIndex]}
+            toggleLightBox={toggleLightBox}
+            pageTurning={pageTurning}
+          />
+          {pageTurning && (
             <SlideShowMain
-              painting={Paintings[slideShowIndex]}
+              painting={Paintings[slideShowIndex + turnIncrement]}
               toggleLightBox={toggleLightBox}
               pageTurning={pageTurning}
             />
-            {pageTurning && (
-              <SlideShowMain
-                painting={Paintings[slideShowIndex + turnIncrement]}
-                toggleLightBox={toggleLightBox}
-                pageTurning={pageTurning}
-              />
-            )}
-          </div>
-
-          <SlideShowFooter
-            slideShowProgress={((slideShowIndex + 1) / Paintings.length) * 100}
-            deactivatedButton={
-              slideShowIndex === 0
-                ? "back"
-                : slideShowIndex === Paintings.length - 1
-                ? "forward"
-                : "none"
-            }
-            slideShowNext={slideShowNext}
-            title={Paintings[slideShowIndex].name}
-            artist={Paintings[slideShowIndex].artist.name}
-            pageTurning={pageTurning}
-          />
+          )}
         </div>
-      ) : (
+      )}
+      {slideShowOn && (
+        <SlideShowFooter
+          slideShowProgress={((slideShowIndex + 1) / Paintings.length) * 100}
+          deactivatedButton={
+            slideShowIndex === 0
+              ? "back"
+              : slideShowIndex === Paintings.length - 1
+              ? "forward"
+              : "none"
+          }
+          slideShowNext={slideShowNext}
+          title={Paintings[slideShowIndex].name}
+          artist={Paintings[slideShowIndex].artist.name}
+          pageTurning={pageTurning}
+        />
+      )}
+      {!slideShowOn && (
         <PreviewGrid
           paintings={Paintings}
           jumpIntoSlideShow={jumpIntoSlideShow}
