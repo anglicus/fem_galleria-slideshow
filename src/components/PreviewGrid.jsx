@@ -16,6 +16,8 @@ const PreviewGrid = (props) => {
           desktopColumn={desktopColumns[i]}
           tabletColumn={tabletColumns[i]}
           key={painting.name}
+          jumpIntoSlideShow={props.jumpIntoSlideShow}
+          index={i}
         />
       ))}
     </main>

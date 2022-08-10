@@ -3,6 +3,12 @@
 import iconView from "../assets/icon-view.png";
 
 const SlideShowMain = (props) => {
+  const titleClass = props.painting.name
+    .replace(/\s/g, "-")
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "");
+
   return (
     <main className="slideshow">
       <div className="slideshow__preview-div">
@@ -30,7 +36,7 @@ const SlideShowMain = (props) => {
       </div>
       <div className="slideshow__title-div">
         <div className="slideshow__title-background-div">
-          <h2 className="slideshow__title slideshow-page">
+          <h2 className={`slideshow__title slideshow-page ${titleClass}`}>
             {props.painting.name}
           </h2>
           <h3 className="slideshow__artist slideshow-page">

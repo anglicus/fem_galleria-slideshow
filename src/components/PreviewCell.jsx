@@ -26,7 +26,11 @@ const PreviewCell = (props) => {
     .replace(/[\u0300-\u036f]/g, "");
 
   return (
-    <div className={`preview-cell ${titleClass}`} style={cellStyle}>
+    <div
+      className={`preview-cell ${titleClass}`}
+      style={cellStyle}
+      onClick={() => props.jumpIntoSlideShow(props.index)}
+    >
       {
         <img
           className="preview-cell__thumbnail"

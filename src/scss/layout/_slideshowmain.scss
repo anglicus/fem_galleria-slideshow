@@ -66,6 +66,7 @@
       top: 0;
       left: 283px;
       width: 390px;
+      overflow: visible;
     }
 
     @include breakpoint-up(large) {
@@ -85,7 +86,39 @@
     @include breakpoint-up(medium) {
       position: relative;
       bottom: auto;
-      padding: 0px 6px 66px 65px;
+      padding: 0px 0px 66px 65px;
+    }
+  }
+
+  &__title {
+    &.van-gogh-self-portrait {
+      padding-right: 44px;
+
+      @include breakpoint-up(medium) {
+        width: 390px;
+        padding-right: 0;
+      }
+    }
+
+    &.arnolfini-portrait {
+      padding-right: 44px;
+    }
+
+    &.girl-with-a-pearl-earring,
+    &.lady-with-an-ermine,
+    &.the-basket-of-apples,
+    &.the-boy-in-the-red-vest {
+      @include breakpoint-up(medium) {
+        width: 390px;
+      }
+    }
+    
+    }
+
+    &.mona-lisa {
+      @include breakpoint-up(medium) {
+        padding-right: 32px;
+      }
     }
   }
 

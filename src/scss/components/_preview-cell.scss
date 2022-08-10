@@ -6,6 +6,7 @@
 .preview-cell {
   position: relative;
   margin-top: 24px;
+  cursor: pointer;
 
   &::before {
     content: "";
@@ -19,6 +20,10 @@
     @include breakpoint-up(medium) {
       bottom: 40px;
     }
+  }
+
+  &:hover {
+    opacity: 50%;
   }
 
   &__thumbnail {

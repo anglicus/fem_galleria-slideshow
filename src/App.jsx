@@ -26,6 +26,12 @@ function App() {
     setSlideShowIndex(nextIndex);
   };
 
+  // for use when clicking directly on a thumbnail from the home page
+  const jumpIntoSlideShow = (index) => {
+    setSlideShowOn(true);
+    setSlideShowIndex(index);
+  };
+
   const toggleLightBox = () => {
     // remove this line before production build
     document.body.className = lightBoxOpen ? "slideshow-on" : "lightbox-on";
@@ -60,7 +66,10 @@ function App() {
           />
         </div>
       ) : (
-        <PreviewGrid paintings={Paintings} />
+        <PreviewGrid
+          paintings={Paintings}
+          jumpIntoSlideShow={jumpIntoSlideShow}
+        />
       )}
       <LightBox
         lightBoxOpen={lightBoxOpen}
