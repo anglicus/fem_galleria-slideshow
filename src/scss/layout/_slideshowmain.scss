@@ -9,7 +9,7 @@
   height: 986px;
 
   @include breakpoint-up(medium) {
-    height: 1095px;
+    height: 1055px;
     padding: 0 40px 40px;
     margin-top: 40px;
   }
@@ -56,9 +56,9 @@
   &__title-div {
     position: relative;
     z-index: 2;
-    margin-top: -80px;
-
+    // top: 116px;
     width: 280px;
+    height: 116px;
 
     @include breakpoint-up(medium) {
       position: absolute;
@@ -77,11 +77,14 @@
 
   &__title-background-div {
     position: absolute;
-    bottom: 25;
+    bottom: 63px;
+    width: 100%;
     padding: 24px;
     background-color: $white;
 
     @include breakpoint-up(medium) {
+      position: relative;
+      bottom: auto;
       padding: 0px 6px 66px 65px;
     }
   }
@@ -95,15 +98,19 @@
   }
 
   &__artist-image {
+    position: absolute;
+    bottom: 0;
     height: 64px;
     width: 64px;
+
     margin-left: 16px;
 
     @include breakpoint-up(medium) {
-      height: 128px;
-      width: 128px;
       display: block;
       float: right;
+      position: relative;
+      height: 128px;
+      width: 128px;
     }
 
     @include breakpoint-up(large) {
@@ -115,13 +122,15 @@
 
   &__text-div {
     position: relative;
-    margin-top: -62px;
+    margin-top: -31px;
 
     @include breakpoint-up(medium) {
+      padding-left: 23px;
       margin-top: 16px;
     }
 
     @include breakpoint-up(large) {
+      padding: 0;
       position: absolute;
       top: -46px;
       right: 40px;
@@ -150,14 +159,14 @@
     z-index: 4;
     position: relative;
     margin-top: -38px;
-    margin-bottom: 40px;
+    margin-bottom: 34px;
 
     @include breakpoint-up(medium) {
-      margin: -124px 115px 40px 115px;
+      margin: -124px 115px 32px 92px;
     }
 
     @include breakpoint-up(large) {
-      margin: -86px 130px 72px 0px;
+      margin: -86px 125px 72px 0px;
     }
   }
 
@@ -170,14 +179,14 @@
     }
 
     @include breakpoint-up(medium) {
-      margin-left: 115px;
+      margin-left: 92px;
     }
 
     @include breakpoint-up(large) {
       position: absolute;
       margin: 0;
       left: 0;
-      bottom: 88px;
+      bottom: 85px;
     }
   }
 }

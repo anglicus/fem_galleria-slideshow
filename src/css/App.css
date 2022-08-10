@@ -228,7 +228,7 @@ button.button--arrow.inactive {
 }
 @media (min-width: 641px) {
   .slideshow {
-    height: 1095px;
+    height: 1055px;
     padding: 0 40px 40px;
     margin-top: 40px;
   }
@@ -277,8 +277,8 @@ button.button--arrow.inactive {
 .slideshow__title-div {
   position: relative;
   z-index: 2;
-  margin-top: -80px;
   width: 280px;
+  height: 116px;
 }
 @media (min-width: 641px) {
   .slideshow__title-div {
@@ -298,12 +298,15 @@ button.button--arrow.inactive {
 }
 .slideshow__title-background-div {
   position: absolute;
-  bottom: 25;
+  bottom: 63px;
+  width: 100%;
   padding: 24px;
   background-color: #ffffff;
 }
 @media (min-width: 641px) {
   .slideshow__title-background-div {
+    position: relative;
+    bottom: auto;
     padding: 0px 6px 66px 65px;
   }
 }
@@ -316,16 +319,19 @@ button.button--arrow.inactive {
   }
 }
 .slideshow__artist-image {
+  position: absolute;
+  bottom: 0;
   height: 64px;
   width: 64px;
   margin-left: 16px;
 }
 @media (min-width: 641px) {
   .slideshow__artist-image {
-    height: 128px;
-    width: 128px;
     display: block;
     float: right;
+    position: relative;
+    height: 128px;
+    width: 128px;
   }
 }
 @media (min-width: 1025px) {
@@ -337,15 +343,17 @@ button.button--arrow.inactive {
 }
 .slideshow__text-div {
   position: relative;
-  margin-top: -62px;
+  margin-top: -31px;
 }
 @media (min-width: 641px) {
   .slideshow__text-div {
+    padding-left: 23px;
     margin-top: 16px;
   }
 }
 @media (min-width: 1025px) {
   .slideshow__text-div {
+    padding: 0;
     position: absolute;
     top: -46px;
     right: 40px;
@@ -374,16 +382,16 @@ button.button--arrow.inactive {
   z-index: 4;
   position: relative;
   margin-top: -38px;
-  margin-bottom: 40px;
+  margin-bottom: 34px;
 }
 @media (min-width: 641px) {
   .slideshow__description {
-    margin: -124px 115px 40px 115px;
+    margin: -124px 115px 32px 92px;
   }
 }
 @media (min-width: 1025px) {
   .slideshow__description {
-    margin: -86px 130px 72px 0px;
+    margin: -86px 125px 72px 0px;
   }
 }
 .slideshow__link-source {
@@ -395,7 +403,7 @@ button.button--arrow.inactive {
 }
 @media (min-width: 641px) {
   .slideshow__link-source {
-    margin-left: 115px;
+    margin-left: 92px;
   }
 }
 @media (min-width: 1025px) {
@@ -403,7 +411,7 @@ button.button--arrow.inactive {
     position: absolute;
     margin: 0;
     left: 0;
-    bottom: 88px;
+    bottom: 85px;
   }
 }
 
@@ -615,7 +623,7 @@ body.slideshow-on::before {
 }
 @media (min-width: 1025px) {
   body.slideshow-on::before {
-    background-image: url("../designmatch/Desktop - Detail 3.png");
+    background-image: url("../designmatch/Desktop - Detail 1.png");
   }
 }
 body.lightbox-on::before {
