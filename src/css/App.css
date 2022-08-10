@@ -310,8 +310,8 @@ button.button--arrow.inactive {
 @media (min-width: 641px) {
   .slideshow__artist-image.tablet {
     display: block;
-    float: right;
     position: relative;
+    right: -246px;
     height: 128px;
     width: 128px;
   }
@@ -341,7 +341,7 @@ button.button--arrow.inactive {
     right: -428px;
   }
 }
-@media (min-width: 1201px) {
+@media (min-width: 1152px) {
   .slideshow__artist-image.mobile-desktop {
     bottom: -64px;
     right: -158px;
@@ -370,7 +370,7 @@ button.button--arrow.inactive {
     margin-top: 0;
     top: 0;
     left: 283px;
-    width: 390px;
+    width: 342px;
     overflow: visible;
   }
 }
@@ -393,6 +393,7 @@ button.button--arrow.inactive {
     position: relative;
     bottom: auto;
     padding: 0px 0px 66px 65px;
+    overflow: visible;
   }
 }
 .slideshow__title.van-gogh-self-portrait {
@@ -449,7 +450,7 @@ button.button--arrow.inactive {
 .slideshow__painting-year {
   color: #f3f3f3;
   position: relative;
-  z-index: 3;
+  z-index: 1;
   text-align: right;
 }
 @media (min-width: 641px) {
@@ -475,7 +476,8 @@ button.button--arrow.inactive {
 }
 @media (min-width: 1024px) {
   .slideshow__description {
-    margin: -86px 125px 72px 0px;
+    width: 351px;
+    margin: -86px 0px 72px calc((1440px - 100vw) / 5);
   }
 }
 .slideshow__link-source {
@@ -493,7 +495,7 @@ button.button--arrow.inactive {
 @media (min-width: 1024px) {
   .slideshow__link-source {
     position: absolute;
-    margin: 0;
+    margin-left: calc((1440px - 100vw) / 5);
     left: 0;
     bottom: 85px;
   }
