@@ -33,6 +33,11 @@ const SlideShowMain = (props) => {
           src={props.painting.images.hero.small}
           alt={props.painting.name}
         />
+        <img
+          className="slideshow__artist-image mobile-desktop"
+          src={props.painting.artist.image}
+          alt={props.painting.artist.name}
+        />
       </div>
       <div className="slideshow__title-div">
         <div className="slideshow__title-background-div">
@@ -44,7 +49,7 @@ const SlideShowMain = (props) => {
           </h3>
         </div>
         <img
-          className="slideshow__artist-image"
+          className="slideshow__artist-image tablet"
           src={props.painting.artist.image}
           alt={props.painting.artist.name}
         />

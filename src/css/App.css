@@ -149,6 +149,11 @@ a {
     right: 0;
   }
 }
+@media (min-width: 1024px) {
+  .preview-cell__thumbnail {
+    right: -10px;
+  }
+}
 .preview-cell__text-div {
   position: absolute;
   bottom: 32px;
@@ -167,7 +172,13 @@ a {
 .preview-cell__title.van-gogh-self-portrait {
   padding-right: 80px;
 }
+.preview-cell__title.penitent-magdalene {
+  padding-right: 32px;
+}
 .preview-cell__title.the-boy-in-the-red-vest {
+  padding-right: 28px;
+}
+.preview-cell__title.the-sleeping-gypsy {
   padding-right: 28px;
 }
 @media (min-width: 641px) {
@@ -178,7 +189,7 @@ a {
     overflow: hidden;
   }
 }
-@media (min-width: 1025px) {
+@media (min-width: 1024px) {
   .preview-cell {
     grid-column: var(--desktop-col);
     width: 310px;
@@ -259,7 +270,7 @@ button.button--arrow.inactive {
     margin-top: 40px;
   }
 }
-@media (min-width: 1025px) {
+@media (min-width: 1024px) {
   .slideshow {
     margin-top: 100px;
     height: 699px;
@@ -267,9 +278,9 @@ button.button--arrow.inactive {
 }
 .slideshow__preview-div {
   position: relative;
-  height: -webkit-min-content;
-  height: -moz-min-content;
-  height: min-content;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 .slideshow__hero-small {
   display: block;
@@ -287,6 +298,53 @@ button.button--arrow.inactive {
   .slideshow__hero-large {
     display: block;
     width: 475px;
+  }
+}
+.slideshow__artist-image {
+  position: absolute;
+  margin-left: 16px;
+}
+.slideshow__artist-image.tablet {
+  display: none;
+}
+@media (min-width: 641px) {
+  .slideshow__artist-image.tablet {
+    display: block;
+    float: right;
+    position: relative;
+    height: 128px;
+    width: 128px;
+  }
+}
+@media (min-width: 1024px) {
+  .slideshow__artist-image.tablet {
+    display: none;
+  }
+}
+.slideshow__artist-image.mobile-desktop {
+  bottom: -117px;
+  height: 64px;
+  width: 64px;
+}
+@media (min-width: 641px) {
+  .slideshow__artist-image.mobile-desktop {
+    display: none;
+  }
+}
+@media (min-width: 1024px) {
+  .slideshow__artist-image.mobile-desktop {
+    height: 128px;
+    width: 128px;
+    display: block;
+    top: auto;
+    bottom: -64px;
+    right: -428px;
+  }
+}
+@media (min-width: 1201px) {
+  .slideshow__artist-image.mobile-desktop {
+    bottom: -64px;
+    right: -158px;
   }
 }
 .slideshow__button-view-image {
@@ -316,7 +374,7 @@ button.button--arrow.inactive {
     overflow: visible;
   }
 }
-@media (min-width: 1025px) {
+@media (min-width: 1024px) {
   .slideshow__title-div {
     position: absolute;
     left: calc(450px - (1440px - 100vw) / 1.5);
@@ -350,17 +408,7 @@ button.button--arrow.inactive {
   padding-right: 44px;
 }
 @media (min-width: 641px) {
-  .slideshow__title.girl-with-a-pearl-earring {
-    padding-right: 32px;
-  }
-}
-@media (min-width: 641px) {
-  .slideshow__title.lady-with-an-ermine, .slideshow__title.the-basket-of-apples {
-    width: 390px;
-  }
-}
-@media (min-width: 641px) {
-  .slideshow__title.the-boy-in-the-red-vest {
+  .slideshow__title.girl-with-a-pearl-earring, .slideshow__title.lady-with-an-ermine, .slideshow__title.the-basket-of-apples, .slideshow__title.the-boy-in-the-red-vest {
     width: 390px;
   }
 }
@@ -377,29 +425,6 @@ button.button--arrow.inactive {
     margin-top: 24px;
   }
 }
-.slideshow__artist-image {
-  position: absolute;
-  bottom: 0;
-  height: 64px;
-  width: 64px;
-  margin-left: 16px;
-}
-@media (min-width: 641px) {
-  .slideshow__artist-image {
-    display: block;
-    float: right;
-    position: relative;
-    height: 128px;
-    width: 128px;
-  }
-}
-@media (min-width: 1025px) {
-  .slideshow__artist-image {
-    position: absolute;
-    bottom: 75px;
-    left: 79px;
-  }
-}
 .slideshow__text-div {
   position: relative;
   margin-top: -31px;
@@ -410,7 +435,7 @@ button.button--arrow.inactive {
     margin-top: 16px;
   }
 }
-@media (min-width: 1025px) {
+@media (min-width: 1024px) {
   .slideshow__text-div {
     padding: 0;
     position: absolute;
@@ -432,7 +457,7 @@ button.button--arrow.inactive {
     text-align: left;
   }
 }
-@media (min-width: 1025px) {
+@media (min-width: 1024px) {
   .slideshow__painting-year {
     text-align: right;
   }
@@ -448,7 +473,7 @@ button.button--arrow.inactive {
     margin: -124px 115px 32px 92px;
   }
 }
-@media (min-width: 1025px) {
+@media (min-width: 1024px) {
   .slideshow__description {
     margin: -86px 125px 72px 0px;
   }
@@ -465,7 +490,7 @@ button.button--arrow.inactive {
     margin-left: 92px;
   }
 }
-@media (min-width: 1025px) {
+@media (min-width: 1024px) {
   .slideshow__link-source {
     position: absolute;
     margin: 0;
@@ -493,13 +518,13 @@ button.button--arrow.inactive {
     padding: 29px 40px 27px;
   }
 }
-@media (min-width: 1025px) {
+@media (min-width: 1024px) {
   .header {
     margin: 0px 40px;
     padding: 40px 0px;
   }
 }
-@media (min-width: 1025px) {
+@media (min-width: 1024px) {
   .header__logo {
     width: 170px;
     height: 48px;
@@ -528,7 +553,7 @@ button.button--arrow.inactive {
     padding: 40px calc((100vw - 688px) / 2) 0;
   }
 }
-@media (min-width: 1025px) {
+@media (min-width: 1024px) {
   .preview-grid {
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(286, 5px);
@@ -598,7 +623,7 @@ button.button--arrow.inactive {
 }
 .lightbox__display {
   position: absolute;
-  top: 48.5%;
+  top: 46.5%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
@@ -612,6 +637,11 @@ button.button--arrow.inactive {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+}
+@media (min-width: 641px) {
+  .lightbox__display {
+    top: 50.5%;
+  }
 }
 .lightbox__button-close {
   -ms-flex-item-align: end;
@@ -632,7 +662,7 @@ button.button--arrow.inactive {
 @media (min-width: 641px) {
   .lightbox__image {
     max-height: 712px;
-    max-width: calc(100vw - 80px);
+    max-width: calc(100vw - 98px);
     width: auto;
   }
 }
@@ -654,7 +684,7 @@ body::before {
     background-size: 768px auto;
   }
 }
-@media (min-width: 1025px) {
+@media (min-width: 1024px) {
   body::before {
     background-size: 1440px auto;
   }
@@ -667,7 +697,7 @@ body.normal::before {
     background-image: url("../designmatch/Tablet - Home.png");
   }
 }
-@media (min-width: 1025px) {
+@media (min-width: 1024px) {
   body.normal::before {
     background-image: url("../designmatch/Desktop - Home.png");
   }
@@ -680,20 +710,20 @@ body.slideshow-on::before {
     background-image: url("../designmatch/Tablet - Detail 3.png");
   }
 }
-@media (min-width: 1025px) {
+@media (min-width: 1024px) {
   body.slideshow-on::before {
     background-image: url("../designmatch/Desktop - Detail 1.png");
   }
 }
 body.lightbox-on::before {
-  background-image: url("../designmatch/Mobile - Gallery 1.png");
+  background-image: url("../designmatch/Mobile - Gallery 3.png");
 }
 @media (min-width: 641px) {
   body.lightbox-on::before {
     background-image: url("../designmatch/Tablet - Gallery 1.png");
   }
 }
-@media (min-width: 1025px) {
+@media (min-width: 1024px) {
   body.lightbox-on::before {
     background-image: url("../designmatch/Desktop - Gallery 1.png");
   }

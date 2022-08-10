@@ -21,7 +21,7 @@
 
   &__preview-div {
     position: relative;
-    height: min-content;
+    width: fit-content;
   }
 
   &__hero-small {
@@ -39,6 +39,51 @@
     @include breakpoint-up(medium) {
       display: block;
       width: 475px;
+    }
+  }
+
+  &__artist-image {
+    position: absolute;
+    margin-left: 16px;
+
+    &.tablet {
+      display: none;
+
+      @include breakpoint-up(medium) {
+        display: block;
+        float: right;
+        position: relative;
+        height: 128px;
+        width: 128px;
+      }
+
+      @include breakpoint-up(large) {
+        display: none;
+      }
+    }
+
+    &.mobile-desktop {
+      bottom: -117px;
+      height: 64px;
+      width: 64px;
+
+      @include breakpoint-up(medium) {
+        display: none;
+      }
+
+      @include breakpoint-up(large) {
+        height: 128px;
+        width: 128px;
+        display: block;
+        top: auto;
+        bottom: -64px;
+        right: -428px;
+      }
+
+      @include breakpoint-up(xlarge) {
+        bottom: -64px;
+        right: -158px;
+      }
     }
   }
 
@@ -112,8 +157,6 @@
         width: 390px;
       }
     }
-    
-    }
 
     &.mona-lisa {
       @include breakpoint-up(medium) {
@@ -127,29 +170,6 @@
 
     @include breakpoint-up(medium) {
       margin-top: 24px;
-    }
-  }
-
-  &__artist-image {
-    position: absolute;
-    bottom: 0;
-    height: 64px;
-    width: 64px;
-
-    margin-left: 16px;
-
-    @include breakpoint-up(medium) {
-      display: block;
-      float: right;
-      position: relative;
-      height: 128px;
-      width: 128px;
-    }
-
-    @include breakpoint-up(large) {
-      position: absolute;
-      bottom: 75px;
-      left: 79px;
     }
   }
 

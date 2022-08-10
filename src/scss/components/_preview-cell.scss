@@ -34,6 +34,10 @@
       top: 0;
       right: 0;
     }
+
+    @include breakpoint-up(large) {
+      right: -10px;
+    }
   }
 
   &__text-div {
@@ -55,7 +59,15 @@
       padding-right: 80px;
     }
 
+    &.penitent-magdalene {
+      padding-right: 32px;
+    }
+
     &.the-boy-in-the-red-vest {
+      padding-right: 28px;
+    }
+
+    &.the-sleeping-gypsy {
       padding-right: 28px;
     }
   }

@@ -19,12 +19,16 @@
 
   &__display {
     position: absolute;
-    top: 48.5%;
+    top: 46.5%;
     left: 50%;
     transform: translate(-50%, -50%);
     display: flex;
     flex-direction: column;
     width: fit-content;
+
+    @include breakpoint-up(medium) {
+      top: 50.5%;
+    }
   }
 
   &__button-close {
@@ -44,7 +48,7 @@
 
     @include breakpoint-up(medium) {
       max-height: 712px;
-      max-width: calc(100vw - 80px);
+      max-width: calc(100vw - 98px);
       width: auto;
     }
   }
