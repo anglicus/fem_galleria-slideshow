@@ -52,15 +52,15 @@ function App() {
     // remove this line before production build
     document.body.className = lightBoxOpen ? "slideshow-on" : "lightbox-on";
     //
-    setLightBoxOpen(lightBoxOpen ? false : true);
-  };
-
-  const closeLightBox = () => {
-    setLightBoxClosing(true);
-    setTimeout(() => {
-      setLightBoxOpen(false);
-      setLightBoxClosing(false);
-    }, 600);
+    if (lightBoxOpen) {
+      setLightBoxClosing(true);
+      setTimeout(() => {
+        setLightBoxOpen(false);
+        setLightBoxClosing(false);
+      }, 600);
+    } else {
+      setLightBoxOpen(lightBoxOpen ? false : true);
+    }
   };
 
   return (
@@ -112,7 +112,7 @@ function App() {
       <LightBox
         lightBoxOpen={lightBoxOpen}
         lightBoxClosing={lightBoxClosing}
-        closeLightBox={closeLightBox}
+        toggleLightBox={toggleLightBox}
         painting={Paintings[slideShowIndex]}
         pageTurning={pageTurning}
       />

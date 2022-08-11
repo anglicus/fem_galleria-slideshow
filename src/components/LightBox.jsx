@@ -13,7 +13,7 @@ const LightBox = (props) => {
       <div className="lightbox__display">
         <button
           className="lightbox__button-close close-image"
-          onClick={props.closeLightBox}
+          onClick={props.toggleLightBox}
         >
           close
         </button>

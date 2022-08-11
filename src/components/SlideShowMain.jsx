@@ -35,18 +35,22 @@ const SlideShowMain = (props) => {
   };
 
   useEffect(() => {
-    const handleSpace = (e) => {
-      console.log(e.keyCode);
+    const handleKeyPress = (e) => {
       e.preventDefault();
-      if (e.keyCode === 32 && !props.pageTurning) {
-        props.toggleLightBox();
+      if (!props.pageTurning) {
+        if (e.keyCode === 39 && props.deactivatedButton !== "forward") {
+          props.slideShowNext(1);
+        } else if (e.keyCode === 37 && props.deactivatedButton !== "back") {
+          props.slideShowNext(-1);
+        } else if (e.keyCode === 32) {
+          props.toggleLightBox();
+        }
       }
     };
-
-    window.addEventListener("keydown", handleSpace);
+    window.addEventListener("keydown", handleKeyPress);
 
     return () => {
-      window.removeEventListener("keydown", handleSpace);
+      window.removeEventListener("keydown", handleKeyPress);
     };
   }, [props]);
 

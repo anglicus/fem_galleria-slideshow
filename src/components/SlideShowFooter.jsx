@@ -1,29 +1,9 @@
 // SlideShowFooter.jsx
 
-import { useEffect } from "react";
-
 import iconForward from "../assets/icon-forward.png";
 import iconBackward from "../assets/icon-backward.png";
 
 const SlideShowFooter = (props) => {
-  useEffect(() => {
-    const handleArrow = (e) => {
-      if (!props.pageTurning) {
-        if (e.keyCode === 39 && props.deactivatedButton !== "forward") {
-          props.slideShowNext(1);
-        } else if (e.keyCode === 37 && props.deactivatedButton !== "back") {
-          props.slideShowNext(-1);
-        }
-      }
-    };
-
-    window.addEventListener("keydown", handleArrow);
-
-    return () => {
-      window.removeEventListener("keydown", handleArrow);
-    };
-  }, [props]);
-
   const inactiveBack = props.deactivatedButton === "back" ? " inactive" : "";
 
   const inactiveForward =
