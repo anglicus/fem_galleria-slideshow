@@ -19,9 +19,6 @@ function App() {
   const [turnClass, setTurnClass] = useState("");
 
   const toggleSlideShow = () => {
-    // remove this line before production build
-    document.body.className = slideShowOn ? "normal" : "slideshow-on";
-    //
     setTurnClass("opening-new");
     setSlideShowOn(slideShowOn ? false : true);
   };
@@ -49,9 +46,6 @@ function App() {
   };
 
   const toggleLightBox = () => {
-    // remove this line before production build
-    document.body.className = lightBoxOpen ? "slideshow-on" : "lightbox-on";
-    //
     if (lightBoxOpen) {
       setLightBoxClosing(true);
       setTimeout(() => {
