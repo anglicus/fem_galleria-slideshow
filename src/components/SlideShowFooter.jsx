@@ -21,6 +21,7 @@ const SlideShowFooter = (props) => {
       </div>
       <div className="footer__button-div">
         <button
+          aria-label="back"
           className={
             "footer__button button--arrow button--backward" + inactiveBack
           }
@@ -33,6 +34,7 @@ const SlideShowFooter = (props) => {
           <img src={iconBackward} alt="back icon" />
         </button>
         <button
+          aria-label="forward"
           className={
             "footer__button button--arrow button--forward" + inactiveForward
           }
