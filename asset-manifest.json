@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/fem_galleria-slideshow/static/css/main.a6519d5e.css",
+    "main.js": "/fem_galleria-slideshow/static/js/main.f9120a2d.js",
+    "static/media/Tablet - Home.png": "/fem_galleria-slideshow/static/media/Tablet - Home.b33965571f1e268ee81f.png",
+    "static/media/Mobile - Home.png": "/fem_galleria-slideshow/static/media/Mobile - Home.b0dc8c8594b0cdf78637.png",
+    "static/media/Tablet - Gallery 1.png": "/fem_galleria-slideshow/static/media/Tablet - Gallery 1.72392d24c364fd114a43.png",
+    "static/media/Desktop - Home.png": "/fem_galleria-slideshow/static/media/Desktop - Home.1429b6cd494cdda72339.png",
+    "static/media/Desktop - Gallery 1.png": "/fem_galleria-slideshow/static/media/Desktop - Gallery 1.39c32189dd12602b83fb.png",
+    "static/media/Tablet - Detail 3.png": "/fem_galleria-slideshow/static/media/Tablet - Detail 3.e08fe457bbac2c002a36.png",
+    "static/media/Desktop - Detail 1.png": "/fem_galleria-slideshow/static/media/Desktop - Detail 1.463292cbf1332268f191.png",
+    "static/media/Mobile - Detail 3.png": "/fem_galleria-slideshow/static/media/Mobile - Detail 3.ec49a6ac13a9cc083d3d.png",
+    "static/media/Mobile - Gallery 3.png": "/fem_galleria-slideshow/static/media/Mobile - Gallery 3.216dbdda401152a8c3a1.png",
+    "index.html": "/fem_galleria-slideshow/index.html",
+    "main.a6519d5e.css.map": "/fem_galleria-slideshow/static/css/main.a6519d5e.css.map",
+    "main.f9120a2d.js.map": "/fem_galleria-slideshow/static/js/main.f9120a2d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a6519d5e.css",
+    "static/js/main.f9120a2d.js"
+  ]
+}
