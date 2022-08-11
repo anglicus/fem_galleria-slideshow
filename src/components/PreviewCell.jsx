@@ -12,7 +12,7 @@ const PreviewCell = (props) => {
       "load",
       () => {
         const rowSpan = Math.floor(img.height / 5) + 8;
-        const delay = props.index / 15 + "s";
+        const delay = props.index / 35 + "s";
         const newCellStyle = {
           gridRow: "span " + rowSpan,
           "--desktop-col": props.desktopColumn,
