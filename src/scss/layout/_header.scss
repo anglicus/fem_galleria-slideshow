@@ -20,6 +20,13 @@
     padding: 40px 0px;
   }
 
+  &__heading {
+    position: absolute;
+    height: 0px;
+    width: 0px;
+    opacity: 0;
+  }
+
   &__logo {
     @include breakpoint-up(large) {
       width: 170px;

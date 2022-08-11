@@ -642,6 +642,12 @@ button.button--arrow.inactive {
     padding: 40px 0px;
   }
 }
+.header__heading {
+  position: absolute;
+  height: 0px;
+  width: 0px;
+  opacity: 0;
+}
 @media (min-width: 1024px) {
   .header__logo {
     width: 170px;
