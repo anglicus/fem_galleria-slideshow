@@ -279,7 +279,7 @@
 
     @include breakpoint-up(large) {
       position: absolute;
-      margin-left: calc((1440px - 100vw) / 5);
+      margin-left: max(0px, calc((1440px - 100vw) / 5));
       left: 0;
       bottom: 85px;
     }

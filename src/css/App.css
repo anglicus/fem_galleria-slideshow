@@ -619,7 +619,7 @@ button.button--arrow.inactive {
 @media (min-width: 1024px) {
   .slideshow__link-source {
     position: absolute;
-    margin-left: calc((1440px - 100vw) / 5);
+    margin-left: max(0px, (1440px - 100vw) / 5);
     left: 0;
     bottom: 85px;
   }
@@ -692,7 +692,7 @@ button.button--arrow.inactive {
   .preview-grid {
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(286, 5px);
-    padding: 40px 2.7777777778% 0;
+    padding: 40px 40px 0;
     max-width: 1440px;
   }
 }
