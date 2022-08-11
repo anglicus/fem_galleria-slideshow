@@ -59,7 +59,7 @@ function App() {
         setLightBoxClosing(false);
       }, 600);
     } else {
-      setLightBoxOpen(lightBoxOpen ? false : true);
+      setLightBoxOpen(true);
     }
   };
 
@@ -77,6 +77,7 @@ function App() {
             toggleLightBox={toggleLightBox}
             pageTurning={pageTurning}
             slideShowNext={slideShowNext}
+            lightBoxOpen={lightBoxOpen}
           />
           {pageTurning && (
             <SlideShowMain

@@ -38,9 +38,9 @@ const SlideShowMain = (props) => {
     const handleKeyPress = (e) => {
       e.preventDefault();
       if (!props.pageTurning) {
-        if (e.keyCode === 39 && props.deactivatedButton !== "forward") {
+        if (e.keyCode === 39 && !props.lightBoxOpen) {
           props.slideShowNext(1);
-        } else if (e.keyCode === 37 && props.deactivatedButton !== "back") {
+        } else if (e.keyCode === 37 && !props.lightBoxOpen) {
           props.slideShowNext(-1);
         } else if (e.keyCode === 32) {
           props.toggleLightBox();
