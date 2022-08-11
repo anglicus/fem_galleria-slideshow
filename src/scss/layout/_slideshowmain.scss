@@ -10,23 +10,28 @@
   height: 986px;
   width: 100vw;
 
-  animation: fade-in 1s;
-
   &__pageturn-div {
     position: relative;
     overflow: hidden;
     width: 200vw;
     display: flex;
 
+    &.opening-new {
+      animation: fade-in 1s;
+      animation-fill-mode: forwards;
+    }
+
     &.turn-right {
       flex-direction: row;
       animation: scroll-in-left 0.6s;
+      animation-fill-mode: forwards;
     }
 
     &.turn-left {
       float: right;
       flex-direction: row-reverse;
       animation: scroll-in-right 0.6s;
+      animation-fill-mode: forwards;
     }
   }
 

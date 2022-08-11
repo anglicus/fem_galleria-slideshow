@@ -22,21 +22,24 @@ function App() {
     // remove this line before production build
     document.body.className = slideShowOn ? "normal" : "slideshow-on";
     //
+    setTurnClass("opening-new");
     setSlideShowOn(slideShowOn ? false : true);
   };
 
   const slideShowNext = (increment) => {
     const newTurnClass = increment === 1 ? "turn-right" : "turn-left";
     const nextIndex = slideShowIndex + increment;
-    setPageTurning(true);
-    setTurnClass(newTurnClass);
-    setTurnIncrement(increment);
-    setTimeout(() => {
-      setSlideShowIndex(nextIndex);
-      setPageTurning(false);
-      setTurnClass("");
-      setTurnIncrement(0);
-    }, 590);
+    if (nextIndex >= 0 && nextIndex < Paintings.length) {
+      setPageTurning(true);
+      setTurnClass(newTurnClass);
+      setTurnIncrement(increment);
+      setTimeout(() => {
+        setSlideShowIndex(nextIndex);
+        setPageTurning(false);
+        setTurnClass("");
+        setTurnIncrement(0);
+      }, 500);
+    }
   };
 
   // for use when clicking directly on a thumbnail from the home page
@@ -73,6 +76,7 @@ function App() {
             painting={Paintings[slideShowIndex]}
             toggleLightBox={toggleLightBox}
             pageTurning={pageTurning}
+            slideShowNext={slideShowNext}
           />
           {pageTurning && (
             <SlideShowMain

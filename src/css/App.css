@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap");
 html {
+  overflow-x: hidden;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
@@ -342,28 +343,32 @@ button.button--arrow.inactive {
   padding: 23px 23px 0 24px;
   height: 986px;
   width: 100vw;
-  -webkit-animation: fade-in 1s;
-          animation: fade-in 1s;
 }
 .slideshow__pageturn-div {
   position: relative;
   overflow: hidden;
-  width: 100vw;
+  width: 200vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
+.slideshow__pageturn-div.opening-new {
+  -webkit-animation: fade-in 1s;
+          animation: fade-in 1s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
 .slideshow__pageturn-div.turn-right {
-  width: 200vw;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
   -webkit-animation: scroll-in-left 0.6s;
           animation: scroll-in-left 0.6s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
 }
 .slideshow__pageturn-div.turn-left {
-  width: 200vw;
   float: right;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: reverse;
@@ -371,6 +376,8 @@ button.button--arrow.inactive {
           flex-direction: row-reverse;
   -webkit-animation: scroll-in-right 0.6s;
           animation: scroll-in-right 0.6s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
 }
 @media (min-width: 641px) {
   .slideshow {

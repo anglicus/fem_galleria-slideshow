@@ -2,6 +2,7 @@
 @use "../abstracts/mixins" as *;
 
 html {
+  overflow-x: hidden;
   box-sizing: border-box;
 }
 

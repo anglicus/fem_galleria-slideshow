@@ -8,17 +8,21 @@ const PreviewCell = (props) => {
   useEffect(() => {
     const img = new Image();
     img.src = props.source;
-    img.addEventListener("load", () => {
-      const rowSpan = Math.floor(img.height / 5) + 8;
-      const delay = props.index / 15 + "s";
-      const newCellStyle = {
-        gridRow: "span " + rowSpan,
-        "--desktop-col": props.desktopColumn,
-        "--tablet-col": props.tabletColumn,
-        "--animation-delay": delay,
-      };
-      setCellStyle(newCellStyle);
-    });
+    img.addEventListener(
+      "load",
+      () => {
+        const rowSpan = Math.floor(img.height / 5) + 8;
+        const delay = props.index / 15 + "s";
+        const newCellStyle = {
+          gridRow: "span " + rowSpan,
+          "--desktop-col": props.desktopColumn,
+          "--tablet-col": props.tabletColumn,
+          "--animation-delay": delay,
+        };
+        setCellStyle(newCellStyle);
+      },
+      []
+    );
   }, [props.source, props.desktopColumn, props.tabletColumn, props.index]);
 
   const titleClass = props.title

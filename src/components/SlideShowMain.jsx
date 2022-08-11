@@ -1,8 +1,55 @@
 // SlideShowMain.jsx
+import { useState, useEffect } from "react";
 
 import iconView from "../assets/icon-view.png";
 
 const SlideShowMain = (props) => {
+  const [touchPosition, setTouchPosition] = useState(null);
+
+  const handleTouchStart = (e) => {
+    const touchDown = e.touches[0].clientX;
+    setTouchPosition(touchDown);
+  };
+
+  const handleTouchMove = (e) => {
+    if (!props.pageTurning) {
+      const touchDown = touchPosition;
+
+      if (touchDown === null) {
+        return;
+      }
+
+      const currentTouch = e.touches[0].clientX;
+      const diff = touchDown - currentTouch;
+
+      if (diff > 5) {
+        props.slideShowNext(1);
+      }
+
+      if (diff < -5) {
+        props.slideShowNext(-1);
+      }
+    }
+
+    setTouchPosition(null);
+  };
+
+  useEffect(() => {
+    const handleSpace = (e) => {
+      console.log(e.keyCode);
+      e.preventDefault();
+      if (e.keyCode === 32 && !props.pageTurning) {
+        props.toggleLightBox();
+      }
+    };
+
+    window.addEventListener("keydown", handleSpace);
+
+    return () => {
+      window.removeEventListener("keydown", handleSpace);
+    };
+  }, [props]);
+
   const titleClass = props.painting.name
     .replace(/\s/g, "-")
     .toLowerCase()
@@ -10,7 +57,11 @@ const SlideShowMain = (props) => {
     .replace(/[\u0300-\u036f]/g, "");
 
   return (
-    <main className="slideshow">
+    <main
+      className="slideshow"
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+    >
       <div className="slideshow__preview-div">
         <button
           className="slideshow__button-view-image view-image"
