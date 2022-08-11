@@ -40,11 +40,13 @@
 
   &__button-close {
     align-self: flex-end;
-    margin-bottom: 33px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    margin-bottom: 30px;
     color: $white;
 
     @include breakpoint-up(medium) {
-      margin-bottom: 40px;
+      margin-bottom: 37px;
     }
   }
 
