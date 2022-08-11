@@ -348,12 +348,13 @@ button.button--arrow.inactive {
 .slideshow__pageturn-div {
   position: relative;
   overflow: hidden;
-  width: 200vw;
+  width: 100vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 .slideshow__pageturn-div.turn-right {
+  width: 200vw;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
@@ -362,6 +363,7 @@ button.button--arrow.inactive {
           animation: scroll-in-left 0.6s;
 }
 .slideshow__pageturn-div.turn-left {
+  width: 200vw;
   float: right;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: reverse;
