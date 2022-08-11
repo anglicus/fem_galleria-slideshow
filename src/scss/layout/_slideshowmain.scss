@@ -9,12 +9,20 @@
   padding: 23px 23px 0 24px;
   height: 986px;
   width: 100vw;
+  max-width: 1440px;
+  margin: 0 auto;
+
+  &__page-frame {
+    width: 100vw;
+  }
 
   &__pageturn-div {
     position: relative;
     overflow: hidden;
-    width: 200vw;
+    width: 300vw;
+    left: -100%;
     display: flex;
+    flex-direction: row;
 
     &.opening-new {
       animation: fade-in 1s;
@@ -22,16 +30,15 @@
     }
 
     &.turn-right {
-      flex-direction: row;
-      animation: scroll-in-left 0.6s;
+      animation: scroll-in-left 0.75s;
       animation-fill-mode: forwards;
+      animation-timing-function: ease-in-out;
     }
 
     &.turn-left {
-      float: right;
-      flex-direction: row-reverse;
-      animation: scroll-in-right 0.6s;
+      animation: scroll-in-right 0.75s;
       animation-fill-mode: forwards;
+      animation-timing-function: ease-in-out;
     }
   }
 
@@ -143,8 +150,11 @@
 
     @include breakpoint-up(large) {
       position: absolute;
-      left: calc(450px - (1440px - 100vw) / 1.5);
+      left: min(450px, calc(450px - (1440px - 100vw) / 1.5));
       height: 100%;
+    }
+
+    @include breakpoint-up(xlarge) {
     }
   }
 
@@ -248,7 +258,10 @@
 
     @include breakpoint-up(large) {
       width: 351px;
-      margin: -86px 0px 72px calc((1440px - 100vw) / 5);
+      margin-top: -86px;
+      margin-right: 0px;
+      margin-bottom: 72px;
+      margin-left: max(0px, calc((1440px - 100vw) / 5));
     }
   }
 

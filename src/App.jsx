@@ -15,7 +15,6 @@ function App() {
   const [lightBoxOpen, setLightBoxOpen] = useState(false);
   const [lightBoxClosing, setLightBoxClosing] = useState(false);
   const [pageTurning, setPageTurning] = useState(false);
-  const [turnIncrement, setTurnIncrement] = useState(0);
   const [turnClass, setTurnClass] = useState("");
 
   const toggleSlideShow = () => {
@@ -29,13 +28,11 @@ function App() {
     if (nextIndex >= 0 && nextIndex < Paintings.length) {
       setPageTurning(true);
       setTurnClass(newTurnClass);
-      setTurnIncrement(increment);
       setTimeout(() => {
         setSlideShowIndex(nextIndex);
         setPageTurning(false);
         setTurnClass("");
-        setTurnIncrement(0);
-      }, 500);
+      }, 750);
     }
   };
 
@@ -67,19 +64,33 @@ function App() {
       {slideShowOn && (
         <div className={`slideshow__pageturn-div ${turnClass}`}>
           <SlideShowMain
+            painting={Paintings[slideShowIndex === 0 ? 0 : slideShowIndex - 1]}
+            toggleLightBox={toggleLightBox}
+            pageTurning={pageTurning}
+            slideShowNext={slideShowNext}
+            lightBoxOpen={lightBoxOpen}
+          />
+          <SlideShowMain
             painting={Paintings[slideShowIndex]}
             toggleLightBox={toggleLightBox}
             pageTurning={pageTurning}
             slideShowNext={slideShowNext}
             lightBoxOpen={lightBoxOpen}
           />
-          {pageTurning && (
-            <SlideShowMain
-              painting={Paintings[slideShowIndex + turnIncrement]}
-              toggleLightBox={toggleLightBox}
-              pageTurning={pageTurning}
-            />
-          )}
+          <SlideShowMain
+            painting={
+              Paintings[
+                slideShowIndex === Paintings.length - 1
+                  ? Paintings.length - 1
+                  : slideShowIndex + 1
+              ]
+            }
+            toggleLightBox={toggleLightBox}
+            pageTurning={pageTurning}
+            slideShowNext={slideShowNext}
+            lightBoxOpen={lightBoxOpen}
+          />
+          )
         </div>
       )}
       {slideShowOn && (
